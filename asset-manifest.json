@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/breastcancer/static/css/main.8230081c.css",
+    "main.js": "/breastcancer/static/js/main.9158b10d.js",
+    "static/js/787.d4aba7ab.chunk.js": "/breastcancer/static/js/787.d4aba7ab.chunk.js",
+    "static/media/Poorti-17_cleanup.png": "/breastcancer/static/media/Poorti-17_cleanup.2db5e9e350e7bc1cb484.png",
+    "static/media/National-Cancer-Institute.webp": "/breastcancer/static/media/National-Cancer-Institute.707b1d4eb0cb0750f039.webp",
+    "static/media/home-image-removebg-preview.png": "/breastcancer/static/media/home-image-removebg-preview.e50f25e60d4d08202386.png",
+    "static/media/Children's Cancer Hospital or Hospital 57357.webp": "/breastcancer/static/media/Children's Cancer Hospital or Hospital 57357.3ed20df01bf459143d8f.webp",
+    "static/media/Bahey.webp": "/breastcancer/static/media/Bahey.f4073fe98d086cb567c0.webp",
+    "static/media/99-removebg-preview.png": "/breastcancer/static/media/99-removebg-preview.92c653e661de3eda0195.png",
+    "static/media/404-16-scarecrow.webp": "/breastcancer/static/media/404-16-scarecrow.13fb0bd8a888a49c9289.webp",
+    "static/media/symptoms-5.webp": "/breastcancer/static/media/symptoms-5.81bbd266625b03d54e0e.webp",
+    "static/media/symptoms-4.webp": "/breastcancer/static/media/symptoms-4.56549abf9ee249b57b6e.webp",
+    "static/media/symptoms-1.webp": "/breastcancer/static/media/symptoms-1.ef9ea894d4463c9689c8.webp",
+    "static/media/symptoms-7.webp": "/breastcancer/static/media/symptoms-7.d1ce40139bd5eea6a6ae.webp",
+    "static/media/symptoms-3.webp": "/breastcancer/static/media/symptoms-3.0fba5cefc496e504e7bb.webp",
+    "static/media/symptoms-6.webp": "/breastcancer/static/media/symptoms-6.b7a772a4f5e6cad11233.webp",
+    "static/media/symptoms-2.webp": "/breastcancer/static/media/symptoms-2.80b96c116f35325e381f.webp",
+    "static/media/chatboot.webp": "/breastcancer/static/media/chatboot.41eaabb1c67849a8700e.webp",
+    "static/media/logo-nav.webp": "/breastcancer/static/media/logo-nav.be35a67ce6c471abddfd.webp",
+    "index.html": "/breastcancer/index.html",
+    "main.8230081c.css.map": "/breastcancer/static/css/main.8230081c.css.map",
+    "main.9158b10d.js.map": "/breastcancer/static/js/main.9158b10d.js.map",
+    "787.d4aba7ab.chunk.js.map": "/breastcancer/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8230081c.css",
+    "static/js/main.9158b10d.js"
+  ]
+}

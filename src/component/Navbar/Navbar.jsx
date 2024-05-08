@@ -6,7 +6,7 @@ export default function Navbar({ crrUser, clearUserData }) {
 
   function LogoutUser() {
     clearUserData();
-    navigate("/BreastCancerAwareness/Login");
+    navigate("Login");
     console.log("done")
   }
 
@@ -39,7 +39,7 @@ export default function Navbar({ crrUser, clearUserData }) {
               <NavLink
                 className="nav-link active text-light"
                 aria-current="page"
-                to="/BreastCancerAwareness/Home"
+                to="Home"
               >
                 {/* {crrUser.name} */}
                 Home
@@ -49,7 +49,7 @@ export default function Navbar({ crrUser, clearUserData }) {
             <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"
-                to="/BreastCancerAwareness/Symptoms"
+                to="Symptoms"
               >
                 Symptoms
               </NavLink>
@@ -57,13 +57,13 @@ export default function Navbar({ crrUser, clearUserData }) {
             <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"
-                to="/BreastCancerAwareness/Treatment"
+                to="Treatment"
               >
                 Treatment
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
-              <NavLink className="nav-link text-light" to="/BreastCancerAwareness/FAQs">
+              <NavLink className="nav-link text-light" to="FAQs">
                 FAQs
               </NavLink>
             </li>
@@ -75,7 +75,7 @@ export default function Navbar({ crrUser, clearUserData }) {
             {/* <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"
-                to="/BreastCancerAwareness/DashBord"
+                to="DashBord"
               >
                 DashBord
               </NavLink>
@@ -86,7 +86,7 @@ export default function Navbar({ crrUser, clearUserData }) {
               </li>
             ) : (
               <li type="submit" className="go mx-5 btn btn-outline-light">
-                <Link to="/BreastCancerAwareness/Register">Register</Link>
+                <Link to="Register">Register</Link>
               </li>
             )}
           </ul>

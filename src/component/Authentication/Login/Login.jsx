@@ -50,7 +50,7 @@ export default function Register({ getUserData }) {
       axios
         .post(`${baseUrl}/auth/signin`, values)
         .then((data) => {
-          if (data.data.user.email == "amezo2866@gmail.com") {
+          if (data.data.user.email === "amezo2866@gmail.com") {
             console.log(data.data.user);
             toast.success("welcome admin");
             navigate("/BreastCancerAwareness/DashBord");

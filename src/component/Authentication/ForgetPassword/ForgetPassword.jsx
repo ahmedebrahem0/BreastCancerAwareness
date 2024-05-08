@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { FaSpinner } from 'react-icons/fa6'
@@ -36,7 +36,7 @@ export default function Register() {
           }
         })
         .catch((error) => {
-          if (error.response.status == 404) {
+          if (error.response.status === 404) {
             toast.error('error')
             setloading(false)
             console.log(error.response.data.message)

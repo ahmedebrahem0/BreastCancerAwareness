@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 export default function MainLayout({ crrUser, clearUserData }) {
-  return (
+return (
     <>
-      <Navbar crrUser={crrUser} clearUserData={clearUserData} />
-      <Outlet />
-      <Footer />
+        <Navbar crrUser={crrUser} clearUserData={clearUserData} />
+        <Outlet />
+        <Footer />
     </>
-  );
+    );
 }

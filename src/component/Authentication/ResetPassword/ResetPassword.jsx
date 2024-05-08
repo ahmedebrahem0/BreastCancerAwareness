@@ -57,7 +57,7 @@ export default function ResetPassword() {
             setloading(true)
             setConfirmation(true)
             toast.success('reset code is done')
-            navigate('/breastcancer/Home')
+            navigate("/BreastCancerAwareness/Home");
           }
           // else {
           //   setloading(false);

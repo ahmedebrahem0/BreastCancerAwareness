@@ -31,7 +31,7 @@ export default function Register() {
           if (date.status === 200) {
             toast.success('Check your Email')
             setloading(false)
-            navigate('/breastcancer/VerifyCode')
+            navigate("/BreastCancerAwareness/VerifyCode");
             console.log(date)
           }
         })

@@ -41,7 +41,7 @@ export default function Register() {
             setloading(false)
             // setConfirmationCode(true);
             toast.success('code is correct')
-            navigate('/breastcancer/ResetPassword')
+            navigate("/BreastCancerAwareness/ResetPassword");
           }
         })
         .catch((error) => {

@@ -35,7 +35,7 @@ export default function App() {
 
   const routers = createBrowserRouter([
     {
-      path: "/breastcancer",
+      path: "/BreastCancerAwareness",
       element: <MainLayout crrUser={crrUser} clearUserData={clearUserData} />,
       errorElement: <NotFound />,
       children: [

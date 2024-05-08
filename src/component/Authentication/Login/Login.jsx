@@ -53,14 +53,14 @@ export default function Register({ getUserData }) {
           if (data.data.user.email == "amezo2866@gmail.com") {
             console.log(data.data.user);
             toast.success("welcome admin");
-            navigate("/breastcancer/DashBord");
+            navigate("/BreastCancerAwareness/DashBord");
           } else if (data.status === 200) {
             localStorage.setItem("token", data.data.token);
             getUserData();
             // console.log(data.data.user.email);
             setloading(false);
             toast.success("Login successfully");
-            navigate("/breastcancer/Home");
+            navigate("/BreastCancerAwareness/Home");
             // console.log("error i login  is : ", data.data.user.role);
           }
         })
@@ -147,12 +147,12 @@ export default function Register({ getUserData }) {
                 type="submit"
                 className="login-btn btn btn-primary w-25 mx-auto mb-3 fs-6 p-2"
               >
-                <NavLink to="/breastcancer/ForgetPass">Forgot Password</NavLink>
+                <NavLink to="/BreastCancerAwareness/ForgetPass">Forgot Password</NavLink>
               </button>
             </div>
 
             <NavLink
-              to="/breastcancer/Register"
+              to="/BreastCancerAwareness/Register"
               className="fs-3 text-decoration-underline"
             >
               Create account

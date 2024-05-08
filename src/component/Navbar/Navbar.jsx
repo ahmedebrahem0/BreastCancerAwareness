@@ -6,7 +6,7 @@ export default function Navbar({ crrUser, clearUserData }) {
 
   function LogoutUser() {
     clearUserData();
-    navigate("/breastcancer/Login");
+    navigate("/BreastCancerAwareness/Login");
     console.log("done")
   }
 
@@ -39,7 +39,7 @@ export default function Navbar({ crrUser, clearUserData }) {
               <NavLink
                 className="nav-link active text-light"
                 aria-current="page"
-                to="/breastcancer/Home"
+                to="/BreastCancerAwareness/Home"
               >
                 {/* {crrUser.name} */}
                 Home
@@ -49,7 +49,7 @@ export default function Navbar({ crrUser, clearUserData }) {
             <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"
-                to="/breastcancer/Symptoms"
+                to="/BreastCancerAwareness/Symptoms"
               >
                 Symptoms
               </NavLink>
@@ -57,25 +57,25 @@ export default function Navbar({ crrUser, clearUserData }) {
             <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"
-                to="/breastcancer/Treatment"
+                to="/BreastCancerAwareness/Treatment"
               >
                 Treatment
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
-              <NavLink className="nav-link text-light" to="/breastcancer/FAQs">
+              <NavLink className="nav-link text-light" to="/BreastCancerAwareness/FAQs">
                 FAQs
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
-              <NavLink className="nav-link text-light" to="/breastcancer/Cheek">
+              <NavLink className="nav-link text-light" to="/BreastCancerAwareness/Cheek">
                 Check
               </NavLink>
             </li>
             {/* <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"
-                to="/breastcancer/DashBord"
+                to="/BreastCancerAwareness/DashBord"
               >
                 DashBord
               </NavLink>
@@ -86,7 +86,7 @@ export default function Navbar({ crrUser, clearUserData }) {
               </li>
             ) : (
               <li type="submit" className="go mx-5 btn btn-outline-light">
-                <Link to="/breastcancer/Register">Register</Link>
+                <Link to="/BreastCancerAwareness/Register">Register</Link>
               </li>
             )}
           </ul>

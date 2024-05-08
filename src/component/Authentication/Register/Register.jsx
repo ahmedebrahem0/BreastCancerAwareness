@@ -117,7 +117,7 @@ export default function Register() {
             //   // width:"500px"
             //   // transition: Bounce,
             // });
-            navigate('/breastcancer/Login')
+            navigate("/BreastCancerAwareness/Login");
           }
         })
         .catch((error) => {
@@ -135,55 +135,55 @@ export default function Register() {
 
   return (
     <>
-      <div className=''>
-        <div className='home-img d-flex justify-content-center align-items-center'>
-          <div className=' bac-blur  px-3 d-flex justify-content-center align-items-center flex-column'>
+      <div className="">
+        <div className="home-img d-flex justify-content-center align-items-center">
+          <div className=" bac-blur  px-3 d-flex justify-content-center align-items-center flex-column">
             <h2>"Welcome Where Care Meet technology."</h2>
-            <div className='row home-img-input w-100'>
+            <div className="row home-img-input w-100">
               <form
-                className=' col-sm w-100'
+                className=" col-sm w-100"
                 onSubmit={registerFormik.handleSubmit}
               >
-                <div className='mb-3'>
-                  <div className='user-input d-flex justify-content-center align-items-center'>
-                    <label className='lable-icon w-25'>
-                      <FontAwesomeIcon icon={faUser} className='mx-2' />
+                <div className="mb-3">
+                  <div className="user-input d-flex justify-content-center align-items-center">
+                    <label className="lable-icon w-25">
+                      <FontAwesomeIcon icon={faUser} className="mx-2" />
                       User Name
                     </label>
                     <input
-                      type='text'
-                      className='form-control w-75 m-auto mb-1'
-                      id='name'
-                      aria-describedby='emailHelp'
+                      type="text"
+                      className="form-control w-75 m-auto mb-1"
+                      id="name"
+                      aria-describedby="emailHelp"
                       // placeholder="User Name"
-                      name='name'
+                      name="name"
                       value={registerFormik.values.name}
                       onChange={registerFormik.handleChange}
                       onBlur={registerFormik.handleBlur}
                     />
                   </div>
                   {registerFormik.errors.name && registerFormik.touched.name ? (
-                    <div className='alt d-flex justify-content-end'>
-                      <div className='alert alert-danger w-75'>
+                    <div className="alt d-flex justify-content-end">
+                      <div className="alert alert-danger w-75">
                         {registerFormik.errors.name}
                       </div>
                     </div>
                   ) : (
-                    ''
+                    ""
                   )}
 
-                  <div className='input-email d-flex justify-content-center align-items-center'>
-                    <label className='lable-icon w-25'>
-                      <FontAwesomeIcon icon={faEnvelope} className='mx-2' />
+                  <div className="input-email d-flex justify-content-center align-items-center">
+                    <label className="lable-icon w-25">
+                      <FontAwesomeIcon icon={faEnvelope} className="mx-2" />
                       Emali
                     </label>
                     <input
-                      type='email'
-                      className='form-control w-75 m-auto mb-1'
-                      id='exampleInputEmail3'
-                      aria-describedby='emailHelp'
+                      type="email"
+                      className="form-control w-75 m-auto mb-1"
+                      id="exampleInputEmail3"
+                      aria-describedby="emailHelp"
                       // placeholder="Email address"
-                      name='email'
+                      name="email"
                       value={registerFormik.values.email}
                       onChange={registerFormik.handleChange}
                       onBlur={registerFormik.handleBlur}
@@ -192,27 +192,27 @@ export default function Register() {
 
                   {registerFormik.errors.email &&
                   registerFormik.touched.email ? (
-                    <div className='alt d-flex justify-content-end'>
-                      <div className='alert alert-danger w-75'>
+                    <div className="alt d-flex justify-content-end">
+                      <div className="alert alert-danger w-75">
                         {registerFormik.errors.email}
                       </div>
                     </div>
                   ) : (
-                    ''
+                    ""
                   )}
 
-                  <div className='input-pass d-flex justify-content-center align-items-center'>
-                    {' '}
-                    <label className='lable-icon w-25'>
-                      <FontAwesomeIcon icon={faLock} className='mx-2' />
+                  <div className="input-pass d-flex justify-content-center align-items-center">
+                    {" "}
+                    <label className="lable-icon w-25">
+                      <FontAwesomeIcon icon={faLock} className="mx-2" />
                       password
                     </label>
                     <input
-                      type='password'
-                      className='form-control  w-75 m-auto mb-1'
-                      id='pass'
+                      type="password"
+                      className="form-control  w-75 m-auto mb-1"
+                      id="pass"
                       // placeholder="Password"
-                      name='password'
+                      name="password"
                       value={registerFormik.values.password}
                       onChange={registerFormik.handleChange}
                       onBlur={registerFormik.handleBlur}
@@ -220,27 +220,27 @@ export default function Register() {
                   </div>
                   {registerFormik.errors.password &&
                   registerFormik.touched.password ? (
-                    <div className='alt d-flex justify-content-end'>
-                      <div className='alert alert-danger w-75'>
+                    <div className="alt d-flex justify-content-end">
+                      <div className="alert alert-danger w-75">
                         {registerFormik.errors.password}
                       </div>
                     </div>
                   ) : (
-                    ''
+                    ""
                   )}
 
-                  <div className='input-repass d-flex justify-content-center align-items-center'>
-                    <label className='lable-icon w-25'>
-                      <FaLockOpen className='mx-2' />
+                  <div className="input-repass d-flex justify-content-center align-items-center">
+                    <label className="lable-icon w-25">
+                      <FaLockOpen className="mx-2" />
                       rePassword
                     </label>
 
                     <input
-                      type='password'
-                      className='form-control  w-75 m-auto mb-1'
-                      id='rePass'
+                      type="password"
+                      className="form-control  w-75 m-auto mb-1"
+                      id="rePass"
                       // placeholder="Password"
-                      name='rePassword'
+                      name="rePassword"
                       value={registerFormik.values.rePassword}
                       onChange={registerFormik.handleChange}
                       onBlur={registerFormik.handleBlur}
@@ -248,26 +248,26 @@ export default function Register() {
                   </div>
                   {registerFormik.errors.rePassword &&
                   registerFormik.touched.rePassword ? (
-                    <div className='alt d-flex justify-content-end'>
-                      <div className='alert alert-danger w-75 '>
+                    <div className="alt d-flex justify-content-end">
+                      <div className="alert alert-danger w-75 ">
                         {registerFormik.errors.rePassword}
                       </div>
                     </div>
                   ) : (
-                    ''
+                    ""
                   )}
-                  <div className='input-phone d-flex justify-content-center align-items-center'>
-                    <label className='lable-icon w-25'>
-                      <FontAwesomeIcon icon={faPhoneFlip} className='mx-2' />
+                  <div className="input-phone d-flex justify-content-center align-items-center">
+                    <label className="lable-icon w-25">
+                      <FontAwesomeIcon icon={faPhoneFlip} className="mx-2" />
                       Phone
                     </label>
 
                     <input
-                      type='tel'
-                      className='form-control  w-75 m-auto mb-1'
-                      id='phone'
+                      type="tel"
+                      className="form-control  w-75 m-auto mb-1"
+                      id="phone"
                       // placeholder="Phone"
-                      name='phone'
+                      name="phone"
                       value={registerFormik.values.phone}
                       // pattern="[0-9()+-]*"
                       onChange={registerFormik.handleChange}
@@ -276,19 +276,19 @@ export default function Register() {
                   </div>
                   {registerFormik.errors.phone &&
                   registerFormik.touched.phone ? (
-                    <div className='alt d-flex justify-content-end'>
-                      <div className='alert alert-danger w-75  '>
+                    <div className="alt d-flex justify-content-end">
+                      <div className="alert alert-danger w-75  ">
                         {registerFormik.errors.phone}
                       </div>
                     </div>
                   ) : (
-                    ''
+                    ""
                   )}
                 </div>
-                <div className='login-submit'>
+                <div className="login-submit">
                   <button
-                    type='submit'
-                    className='forget-send btn btn-danger w-25 mx-1 mb-3 fs-5'
+                    type="submit"
+                    className="forget-send btn btn-danger w-25 mx-1 mb-3 fs-5"
                     disabled={
                       !(
                         registerFormik.isValid &&
@@ -298,17 +298,17 @@ export default function Register() {
                     }
                   >
                     {!loading ? (
-                      'register'
+                      "register"
                     ) : (
                       // <FontAwesomeIcon icon={faSpinner} />
-                      <FaSpinner className='fa-spin' />
+                      <FaSpinner className="fa-spin" />
                     )}
                   </button>
                   <button
-                    type='submit'
-                    className='forget-send btn btn-primary w-25 mx-auto mb-3 fs-5'
+                    type="submit"
+                    className="forget-send btn btn-primary w-25 mx-auto mb-3 fs-5"
                   >
-                    <NavLink to='/breastcancer/Login'>Login</NavLink>
+                    <NavLink to="/BreastCancerAwareness/Login">Login</NavLink>
                   </button>
                 </div>
               </form>
@@ -317,5 +317,5 @@ export default function Register() {
         </div>
       </div>
     </>
-  )
+  );
 }

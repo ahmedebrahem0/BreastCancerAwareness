@@ -68,7 +68,7 @@ export default function Navbar({ crrUser, clearUserData }) {
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
-              <NavLink className="nav-link text-light" to="/BreastCancerAwareness/Cheek">
+              <NavLink className="nav-link text-light" to="Cheek">
                 Check
               </NavLink>
             </li>

@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import { baseUrl } from '../../../baseUrl'
 import { useNavigate } from 'react-router-dom'
-import toast, { Toaster } from 'react-hot-toast'
+import { toast } from "react-toastify";
 
 export default function Register() {
   let [loading, setloading] = useState(false)
@@ -104,7 +104,7 @@ export default function Register() {
           </div>
         </div>
       </div>
-      <Toaster />
+      {/* <Toaster /> */}
     </>
   )
 }

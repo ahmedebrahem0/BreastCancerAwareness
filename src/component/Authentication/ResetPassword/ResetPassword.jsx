@@ -54,6 +54,8 @@ export default function ResetPassword() {
         .put(`${baseUrl}/auth/resetPassword`, values)
         .then((date) => {
           if (date.status === 200) {
+            localStorage.setItem("token", date.data.token);
+            console.log(date.data.token);
             setloading(true)
             setConfirmation(true)
             toast.success('reset code is done')

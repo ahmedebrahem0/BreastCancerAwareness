@@ -5,7 +5,6 @@ import img3 from '../../img/symptoms-3.webp'
 import img4 from '../../img/symptoms-4.webp'
 import img5 from '../../img/symptoms-5.webp'
 import img6 from '../../img/symptoms-6.webp'
-
 import 'animate.css'
 import { AiFillYoutube } from 'react-icons/ai'
 import { BiLogoFacebook } from 'react-icons/bi'
@@ -25,7 +24,6 @@ import './Home.module.css'
 import { useEffect } from 'react'
 export default function Home({ crrUser }) {
   // let Cart = useContext(CartContext);
-
   useEffect(() => {
     toast("I Can help you?", {
       position: "bottom-right",

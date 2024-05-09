@@ -68,13 +68,13 @@ export default function Register({ getUserData }) {
           if (error.response.status === 401) {
             // setConfirmationCodeVisible(false);
             setloading(false);
-            toast.error("Something went wrong, Try again");
+            toast.error("Invalid email or password");
             console.log("error i login", error);
           }
         });
     },
   });
-  localStorage.clear();
+  // localStorage.clear();
   // console.log("login un", registerFormik.error);
   return (
     <div className="home-img d-flex justify-content-center align-items-center row m-0">

@@ -20,14 +20,18 @@ import ResetPassword from "./component/Authentication/ResetPassword/ResetPasswor
 import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 export default function App() {
-    const [crrUser, setCrrUser] = useState([null]);
 
+  
+
+    const [crrUser, setCrrUser] = useState(null);
     function getUserData() {
       //decode user data
       const userData = jwtDecode(localStorage.getItem("token"));
-      console.log("userData", userData);
-      setCrrUser("stCrruser", userData);
-    }
+      console.log("userData from app", userData);
+      setCrrUser(userData);
+  }
+  console.log("crrUser from app", crrUser);
+  
     function clearUserData() {
       localStorage.removeItem("token");
       setCrrUser(null);

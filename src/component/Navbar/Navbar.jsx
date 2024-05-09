@@ -7,10 +7,9 @@ export default function Navbar({ crrUser, clearUserData }) {
   function LogoutUser() {
     clearUserData();
     navigate("Login");
-    console.log("done")
   }
 
-  console.log("crrUser from ", crrUser);
+  console.log("crrUser from navbar ", crrUser);
   // let Cart = useContext(CartContext);
 
   return (
@@ -80,7 +79,7 @@ export default function Navbar({ crrUser, clearUserData }) {
                 DashBord
               </NavLink>
             </li> */}
-            {crrUser ? (
+            {crrUser? (
               <li type="submit" className="go mx-5 btn btn-outline-light">
                 <span onClick={LogoutUser}>Logout</span>
               </li>

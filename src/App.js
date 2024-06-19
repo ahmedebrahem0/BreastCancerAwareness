@@ -9,7 +9,7 @@ import NotFound from "./component/NotFound/NotFound";
 import Cheek from "./component/Cheek/Cheek";
 import Login from "./component/Authentication/Login/Login.jsx";
 import Symptoms from "./component/Symptoms/Symptoms.jsx";
-import DashBord from "./component/DashBord/DashBord.jsx";
+import DashBoard from "./component/DashBoard/DashBoard.jsx";
 import Contact from "./component/Contact/Contact";
 import Register from "./component/Authentication/Register/Register.jsx";
 import ForgetPassword from "./component/Authentication/ForgetPassword/ForgetPassword.jsx";
@@ -23,7 +23,8 @@ export default function App() {
 
   
 
-    const [crrUser, setCrrUser] = useState(null);
+  const [crrUser, setCrrUser] = useState([null]);
+  
     function getUserData() {
       //decode user data
       const userData = jwtDecode(localStorage.getItem("token"));
@@ -31,12 +32,10 @@ export default function App() {
       setCrrUser(userData);
   }
   console.log("crrUser from app", crrUser);
-  
     function clearUserData() {
       localStorage.removeItem("token");
       setCrrUser(null);
     }
-
   const routers = createBrowserRouter([
     {
       path: "/BreastCancerAwareness",
@@ -49,7 +48,7 @@ export default function App() {
         { path: "Cheek", element: <Cheek /> },
         { path: "Symptoms", element: <Symptoms /> },
         { path: "Footer", element: <Footer /> },
-        { path: "DashBord", element: <DashBord /> },
+        { path: "DashBoard", element: <DashBoard /> },
         { path: "Treatment", element: <Treatment /> },
         { path: "VerifyCode", element: <VerifyResetCode /> },
         { path: "FAQs", element: <FAQs /> },

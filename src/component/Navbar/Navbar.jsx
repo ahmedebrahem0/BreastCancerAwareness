@@ -46,18 +46,12 @@ export default function Navbar({ crrUser, clearUserData }) {
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
-              <NavLink
-                className="nav-link text-light"
-                to="Symptoms"
-              >
+              <NavLink className="nav-link text-light" to="Symptoms">
                 Symptoms
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
-              <NavLink
-                className="nav-link text-light"
-                to="Treatment"
-              >
+              <NavLink className="nav-link text-light" to="Treatment">
                 Treatment
               </NavLink>
             </li>
@@ -79,7 +73,7 @@ export default function Navbar({ crrUser, clearUserData }) {
                 DashBord
               </NavLink>
             </li> */}
-            {crrUser? (
+            {localStorage?.getItem("token") ? (
               <li type="submit" className="go mx-5 btn btn-outline-light">
                 <span onClick={LogoutUser}>Logout</span>
               </li>

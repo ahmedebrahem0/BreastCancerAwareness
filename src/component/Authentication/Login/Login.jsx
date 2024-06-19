@@ -53,7 +53,7 @@ export default function Register({ getUserData }) {
           if (data.data.user.email === "amezo2866@gmail.com") {
             console.log(data.data.user);
             toast.success("welcome admin");
-            navigate("/BreastCancerAwareness/DashBord");
+            navigate("/BreastCancerAwareness/DashBoard");
           } else if (data.status === 200) {
             localStorage.setItem("token", data.data.token);
             getUserData();

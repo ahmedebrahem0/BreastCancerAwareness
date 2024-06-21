@@ -1,10 +1,13 @@
 import { Outlet } from 'react-router-dom'
+import { useState } from "react";
+import { LuSendHorizonal } from "react-icons/lu";
 import img1 from '../../img/symptoms-1.webp'
 import img2 from '../../img/symptoms-2.webp'
 import img3 from '../../img/symptoms-3.webp'
 import img4 from '../../img/symptoms-4.webp'
 import img5 from '../../img/symptoms-5.webp'
 import img6 from '../../img/symptoms-6.webp'
+import robot from '../../img/robot-assistant.png'
 import 'animate.css'
 import { AiFillYoutube } from 'react-icons/ai'
 import { BiLogoFacebook } from 'react-icons/bi'
@@ -40,21 +43,467 @@ export default function Home({ crrUser }) {
   }, []);
   const changeClass = (even) => {
     even.currentTarget.classList.remove("animate__infinite");
-    // console.log("hell");
   };
+
+  const [isChatVisible, setIsChatVisible] = useState(false);
+
+  const toggleChatVisibility = () => {
+    setIsChatVisible(!isChatVisible);
+  };
+
+  const [message, setMessage] = useState(""); // حالة لإدارة قيمة الحقل النصي
+  const handleInputChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const [messages, setMessages] = useState([]); // حالة لإدارة الرسائل
+  const handleSendMessage = () => {
+    if (message.trim()) {
+      setMessages([...messages, { text: message, type: "outgoing" }]);
+      setMessage("");
+
+      // لإضافة رسالة واردة بشكل تلقائي (يمكنك تعديل هذا الجزء حسب الحاجة)
+      setTimeout(() => {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: "This is an incoming message", type: "incoming" },
+        ]);
+      }, 1000);
+    }
+  };
+
+  const [datachat, SetDatachat] = useState(false);
+  const chatbotData = () => {
+    SetDatachat(!datachat);
+  };
+
+  // const [Treatment, SetTreatment] = useState(false);
+  //spinner
+  const [isLoading, setIsLoading] = useState(false);
+  const handleTreatment = () => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: "Treatment information...", type: "outgoing" },
+    ]);
+
+    setIsLoading(true); // عرض الـ spinner
+
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: `1. Surgery
+Purpose: To remove the tumor and some surrounding healthy tissue.
+Types:
+Curative Surgery: Removes the entire tumor when localized.
+Debulking Surgery: Removes part of the tumor when complete removal is not possible.
+Palliative Surgery: Relieves symptoms and improves quality of life.
+Reconstructive Surgery: Restores appearance or function after primary surgery.
+2. Radiation Therapy
+Purpose: Uses high doses of radiation to kill cancer cells or shrink tumors.
+Types:
+External Beam Radiation: Delivered from outside the body.
+Internal Radiation (Brachytherapy): Places radioactive material inside the body near cancer cells.
+Systemic Radiation: Uses radioactive substances that travel in the blood to target cancer cells.
+3. Chemotherapy
+Purpose: Uses drugs to kill rapidly dividing cancer cells.
+Methods:
+Intravenous (IV): Delivered through a vein.
+Oral: Taken by mouth.
+Intramuscular or Subcutaneous: Injected into a muscle or under the skin.
+Intrathecal: Delivered into the cerebrospinal fluid.
+4. Immunotherapy
+Purpose: Boosts the body’s immune system to fight cancer.
+Types:
+Checkpoint Inhibitors: Help the immune system recognize and attack cancer cells.
+CAR T-cell Therapy: Modifies T-cells to attack cancer cells.
+Cancer Vaccines: Stimulate the immune system to attack cancer cells.
+5. Targeted Therapy
+Purpose: Uses drugs to target specific molecules involved in cancer growth and spread.
+Types:
+Monoclonal Antibodies: Bind to specific targets on cancer cells.
+Small Molecule Inhibitors: Interfere with specific pathways or proteins involved in cancer growth.
+          `,
+          type: "incoming",
+        },
+      ]);
+      setIsLoading(false); // إخفاء الـ spinner
+    }, 2000); // تأخير لمدة ثانيتين
+  };
+  const handleSymptoms = () => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: "Symptoms information...", type: "outgoing" },
+    ]);
+
+    setIsLoading(true); // عرض الـ spinner
+
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: `1- Lump in the Breast or Armpit:
+
+A new lump or mass in the breast or underarm area is one of the most common signs of breast cancer. These lumps are often hard and painless, but some can be tender or painful.
+2- Changes in Breast Size or Shape:
+
+Any unexplained change in the size, shape, or appearance of the breast may indicate breast cancer.
+3- Skin Changes on the Breast:
+
+Redness, dimpling, puckering, or thickening of the breast skin that resembles the texture of an orange peel.
+4- Nipple Changes:
+
+Inversion (turning inward) of the nipple, changes in the nipple shape, or discharge (other than breast milk) that is clear, bloody, or another unusual color.
+5- Breast Pain:
+
+While breast pain is more commonly associated with benign conditions, persistent pain or discomfort in one part of the breast can be a symptom of breast cancer.
+6- Swelling:
+
+Swelling of all or part of the breast, even if no lump is felt.
+7- Lymph Node Changes:
+
+Swelling or lumps in the lymph nodes under the arm or around the collarbone, which may indicate the spread of breast cancer.
+
+        `,
+          type: "incoming",
+        },
+      ]);
+      setIsLoading(false); // إخفاء الـ spinner
+    }, 2000); // تأخير لمدة ثانيتين
+  };
+
+  const handlehospitals = () => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: "famous breast cancer hospitals in Egypt...", type: "outgoing" },
+    ]);
+
+    setIsLoading(true); // عرض الـ spinner
+
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: `1- National Cancer Institute, Cairo University:
+
+Located in Cairo, this institute is renowned for its comprehensive cancer care and research. It offers specialized treatment for breast cancer, including surgery, chemotherapy, radiation therapy, and supportive care.
+2- Magrabi Hospitals & Centers:
+
+Magrabi hospitals have a strong reputation for providing high-quality healthcare services across Egypt. They offer multidisciplinary breast cancer treatment programs that include surgery, chemotherapy, and radiation therapy.
+3- Cairo Oncology Center:
+
+Located in Cairo, this center specializes in oncology and provides advanced treatment options for breast cancer, including surgery, radiation therapy, and targeted therapies.
+4- 57357 Hospital (Children's Cancer Hospital Egypt):
+
+Although primarily focused on pediatric oncology, 57357 Hospital also offers specialized services for adult cancer patients, including breast cancer. It is known for its state-of-the-art facilities and comprehensive approach to cancer treatment.
+5- Dar El Fouad Hospital:
+
+Dar El Fouad Hospital in Cairo is equipped with modern technology and offers a range of oncology services, including breast cancer treatment. It has a dedicated team of oncologists and support staff.
+          `,
+          type: "incoming",
+        },
+      ]);
+      setIsLoading(false); // إخفاء الـ spinner
+    }, 2000); // تأخير لمدة ثانيتين
+  };
+  const handleCause = () => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: "Factors that cause breast cancer?...", type: "outgoing" },
+    ]);
+
+    setIsLoading(true); // عرض الـ spinner
+
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: `1. Genetic Factors:
+BRCA1 and BRCA2 Mutations: Inherited mutations in these genes increase the risk of breast and ovarian cancers.
+Family History: Having a first-degree relative (parent, sibling, child) with breast cancer increases the risk.
+2. Hormonal Factors:
+Estrogen Exposure: Prolonged exposure to estrogen over a lifetime, such as early menstruation (before age 12), late menopause (after age 55), or hormone replacement therapy.
+Reproductive Factors: Starting periods early or having a late first pregnancy or never having been pregnant.
+3. Lifestyle Factors:
+Alcohol Consumption: Regular and excessive alcohol consumption increases the risk.
+Obesity: Being overweight or obese, especially after menopause.
+Physical Inactivity: Lack of regular physical activity.
+Diet: High-fat diets or diets lacking in fruits and vegetables may contribute.
+4. Environmental Factors:
+Exposure to Radiation: High doses of radiation, such as from previous radiation therapy to the chest.
+Environmental Pollutants: Some chemicals in the environment may mimic estrogen or otherwise affect hormone function.
+5. Other Risk Factors:
+Age: Risk increases with age, with most breast cancers occurring in women over 50.
+Personal History: Previous breast cancer or certain non-cancerous breast diseases.
+Race and Ethnicity: White women have a slightly higher risk, but African American women are more likely to die from breast cancer at any age.
+6. Unknown Factors:
+Other Genetic Mutations: Besides BRCA1 and BRCA2, other genetic mutations and variations may contribute.
+Immune System: Changes in the immune system may play a role.
+Endocrine Disruptors: Chemicals that interfere with hormone function.
+7. Risk Reduction Strategies:
+While some risk factors cannot be changed, such as age and family history, adopting a healthy lifestyle can help reduce the risk of breast cancer:
+
+Maintain a healthy weight.
+Be physically active.
+Limit alcohol consumption.
+Avoid hormone replacement therapy, if possible.
+Consider genetic counseling and testing if there is a strong family history.
+Understanding these factors can help individuals make informed decisions about their health and potentially reduce their risk of developing breast cancer. Regular screening and early detection remain crucial for improving outcomes in breast cancer treatment.
+          `,
+          type: "incoming",
+        },
+      ]);
+      setIsLoading(false); // إخفاء الـ spinner
+    }, 2000); // تأخير لمدة ثانيتين
+  };
+
+  const handleFAQs = () => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: "FAQs information...", type: "outgoing" },
+    ]);
+
+    setIsLoading(true); // عرض الـ spinner
+
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: `1. What is breast cancer?
+Breast cancer is a type of cancer that develops in the cells of the breast. It typically begins in the ducts or lobules and can spread to other parts of the body.
+
+2. What are the risk factors for breast cancer?
+Gender: Being female.
+Age: Risk increases with age.
+Family History: Having close relatives with breast cancer.
+Genetic Mutations: BRCA1 and BRCA2 mutations.
+Hormonal Factors: Early menstruation, late menopause, hormone replacement therapy.
+Lifestyle Factors: Alcohol consumption, obesity, lack of physical activity.
+3. What are the common symptoms of breast cancer?
+A lump in the breast or underarm.
+Changes in breast size, shape, or appearance.
+Skin changes such as redness or dimpling.
+Nipple changes or discharge.
+Breast pain or discomfort.
+4. How is breast cancer diagnosed?
+Physical Examination: By a healthcare provider.
+Imaging Tests: Mammograms, ultrasounds, MRIs.
+Biopsy: Removing a sample of breast tissue for testing.
+5. What are the stages of breast cancer?
+Stage 0: Non-invasive, confined to the ducts.
+Stage I: Small tumor, localized.
+Stage II: Larger tumor or spread to a few nearby lymph nodes.
+Stage III: More extensive lymph node involvement, larger tumor.
+Stage IV: Metastatic, cancer has spread to other parts of the body.
+        `,
+          type: "incoming",
+        },
+      ]);
+      setIsLoading(false); // إخفاء الـ spinner
+    }, 2000); // تأخير لمدة ثانيتين
+  };
+
+  console.log(message);
   return (
     <>
       <Outlet />
 
       <div>
         {/* <!-- start home page  --> */}
+        {isChatVisible && (
+          <div className="chatbot">
+            <header>
+              <h2>Chatbot</h2>
+              <span className="close-btn material-symbols-outlined">close</span>
+            </header>
+            <ul className="chatbox">
+              <li className="chat incoming">
+                <span className="material-symbols-outlined">
+                  <img src={robot} alt="robot" />
+                </span>
+                <p>
+                  {/* Hi there 👋 */}
+                  {/* <br /> */}I can help you today!
+                </p>
+              </li>
 
+              <li className="chat incoming">
+                <span className="material-symbols-outlined">
+                  <img src={robot} alt="robot" />
+                </span>
+                <div className="div-chat p-2">
+                  <button className="start-chatt" onClick={chatbotData}>
+                    Start
+                  </button>
+                </div>
+              </li>
+              {datachat && (
+                <div className="mt-3">
+                  <li className="chat incoming">
+                    <span className="material-symbols-outlined">
+                      <img src={robot} alt="robot" />
+                    </span>
+                    <div className="alldata">
+                      <ul className="p-0">
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chat"
+                              onClick={handleTreatment}
+                            >
+                              Treatment
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chat"
+                              onClick={handleSymptoms}
+                            >
+                              Symptoms
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chattt"
+                              onClick={handlehospitals}
+                            >
+                              famous breast cancer hospitals
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chattt"
+                              onClick={handleCause}
+                            >
+                              Factors that cause breast cancer?
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button className="start-chat" onClick={handleFAQs}>
+                              FAQs
+                            </button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </div>
+              )}
+
+              {messages.map((msg, index) => (
+                <li key={index} className={`chat ${msg.type}`}>
+                  <p>{msg.text}</p>
+                </li>
+              ))}
+              {/* {datachat && (
+                <div className="mt-3">
+                  <li className="chat incoming">
+                    <span className="material-symbols-outlined">
+                      <img src={robot} alt="robot" />
+                    </span>
+                    <div className="alldata">
+                      <ul className="p-0">
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chat"
+                              onClick={handleTreatment}
+                            >
+                              Treatment
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chat"
+                              onClick={handleSymptoms}
+                            >
+                              Symptoms
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chattt"
+                              onClick={handlehospitals}
+                            >
+                              famous breast cancer hospitals
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chattt"
+                              onClick={handleCause}
+                            >
+                              Factors that cause breast cancer?
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button className="start-chat" onClick={handleFAQs}>
+                              FAQs
+                            </button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </div>
+              )} */}
+              {isLoading && (
+                <li className="chat incoming">
+                  <div className="dots-div">
+                    <section className="dots-container">
+                      <div className="dot"></div>
+                      <div className="dot"></div>
+                      <div className="dot"></div>
+                      <div className="dot"></div>
+                      <div className="dot"></div>
+                    </section>
+                  </div>
+                </li>
+              )}
+            </ul>
+            <div className="chat-input">
+              <textarea
+                placeholder="Enter a message..."
+                spellCheck="false"
+                required
+                value={message} // ربط القيمة بحالة الحقل النصي
+                onChange={handleInputChange} // تحديث الحالة عند تغيير القيمة
+                // defaultValue={""}
+              />
+              <span
+                id="send-btn"
+                className="material-symbols-rounded"
+                onClick={handleSendMessage}
+              >
+                <LuSendHorizonal color="#FD70C0" />
+              </span>
+            </div>
+          </div>
+        )}
         <div className="chatboot ">
           <img
+            id="img-chat"
             src={chatboot}
             alt="chatboot"
-            className="chatboot-img  animate__bounce animate__slow animate__animated animate__infinite"
-            onClick={(even) => changeClass(even)}
+            className="chatboot-img animate__bounce animate__slow animate__animated animate__infinite"
+            onClick={toggleChatVisibility}
+            // onClick={(even) => changeClass(even)}
           />
           <div className="chatboott"></div>
         </div>
@@ -1433,3 +1882,4 @@ export default function Home({ crrUser }) {
     </>
   );
 }
+

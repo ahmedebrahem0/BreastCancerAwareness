@@ -75,19 +75,6 @@ export default function Register({ getUserData }) {
             navigate("/BreastCancerAwareness/DashBoard");
           }
 
-          // else if (users && users.length > 0) {
-          //   users.forEach((user) => {
-          //     if (
-          //       data.data.user.email === users.email &&
-          //       data.data.user.password === users.assword
-          //     ) {
-          //       toast.success("Login successfully");
-          //       navigate("/BreastCancerAwareness/Home");
-          //       console.log(data.data.user.email, users.email);
-          //     }
-          //     // console.log(`Email: ${user.email}, Password: ${user.password}`);
-          // })
-          // }
           else if(data.status === 200){
             localStorage.setItem("token", data.data.token);
             getUserData();

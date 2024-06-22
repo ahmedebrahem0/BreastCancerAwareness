@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BreastCancerAwareness/static/css/main.57d522ec.css",
-    "main.js": "/BreastCancerAwareness/static/js/main.7cee0aa3.js",
+    "main.css": "/BreastCancerAwareness/static/css/main.55dd7256.css",
+    "main.js": "/BreastCancerAwareness/static/js/main.047efd81.js",
     "static/js/787.d4aba7ab.chunk.js": "/BreastCancerAwareness/static/js/787.d4aba7ab.chunk.js",
     "static/media/Poorti-17_cleanup.png": "/BreastCancerAwareness/static/media/Poorti-17_cleanup.2db5e9e350e7bc1cb484.png",
     "static/media/National-Cancer-Institute.webp": "/BreastCancerAwareness/static/media/National-Cancer-Institute.707b1d4eb0cb0750f039.webp",
@@ -21,12 +21,12 @@
     "static/media/chatboot.webp": "/BreastCancerAwareness/static/media/chatboot.41eaabb1c67849a8700e.webp",
     "static/media/logo-nav.webp": "/BreastCancerAwareness/static/media/logo-nav.be35a67ce6c471abddfd.webp",
     "index.html": "/BreastCancerAwareness/index.html",
-    "main.57d522ec.css.map": "/BreastCancerAwareness/static/css/main.57d522ec.css.map",
-    "main.7cee0aa3.js.map": "/BreastCancerAwareness/static/js/main.7cee0aa3.js.map",
+    "main.55dd7256.css.map": "/BreastCancerAwareness/static/css/main.55dd7256.css.map",
+    "main.047efd81.js.map": "/BreastCancerAwareness/static/js/main.047efd81.js.map",
     "787.d4aba7ab.chunk.js.map": "/BreastCancerAwareness/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57d522ec.css",
-    "static/js/main.7cee0aa3.js"
+    "static/css/main.55dd7256.css",
+    "static/js/main.047efd81.js"
   ]
 }

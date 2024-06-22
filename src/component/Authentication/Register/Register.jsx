@@ -8,14 +8,19 @@ import { FaLockOpen } from 'react-icons/fa'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { baseUrl } from '../../../baseUrl'
-
 import { NavLink, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-
+import { useLocation } from "react-router-dom";
+import { useContext } from 'react';
+import { CartContext } from "../../Context/CartContext";
 export default function Register() {
+  const { setUser } = useContext(CartContext);
+  console.log("data from", setUser);
+  const { setUserData } = useContext(CartContext);
   let [loading, setloading] = useState(false)
 
   let navigate = useNavigate()
+
 
   let validationSchema = Yup.object({
     name: Yup.string().min(10, 'Too Short!').max(40).required(),
@@ -45,45 +50,6 @@ export default function Register() {
       .required('Please enter phone number'),
   })
 
-  // let validate = (values) => {
-  //   let error = {}
-  //   if (!values.name) {
-  //     error.name='Required'
-  //   } else if (values.name.length > 15) {
-  //     error.name = "Must be 15 characters or less";
-  //   }
-
-  //   if (!values.email) {
-  //     error.email = "Required";
-  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-  //     error.email = "Invalid email address";
-  //   }
-
-  //   if (!values.password) {
-  //     error.password = "Required";
-  //   } else if (!/^[A-Z][a-z0-9A-Z@#$%]$/i.test(values.password)) {
-  //     error.password = "Invalid password address";
-  //   } else if (values.password.length > 20) {
-  //     error.password = "Must be 20 characters or less";
-  //   }
-
-  //   if (!values.rePassword) {
-  //     error.rePassword = "Required";
-  //   } else if (values.password != values.rePassword) {
-  //     error.rePassword = "rePassword must match";
-  //   }
-
-  //   if (!values.phone) {
-  //     error.phone = "Required";
-  //   } else if (!/^[0-9()+-]*$/i.test(values.phone)) {
-  //     error.phone = "Invalid phone address";
-  //   }
-  //   // else if (values.phone.replace(/\D/g, "")) {
-  //   //   error.phone = "Write numbers, not letters";
-  //   // }
-  //   return error
-  // };
-
   let registerFormik = useFormik({
     initialValues: {
       name: '',
@@ -103,21 +69,18 @@ export default function Register() {
         // console.log(Yup.date)
         .then((date) => {
           if (date.status === 201) {
-            toast.success('success')
-            setloading(true)
-            // toast.success("success                                                                        ", {
-            //   position: "top-right",
-            //   autoClose: 5000,
-            //   hideProgressBar: false,
-            //   closeOnClick: true,
-            //   pauseOnHover: true,
-            //   draggable: true,
-            //   progress: undefined,
-            //   theme: "colored",
-            //   // width:"500px"
-            //   // transition: Bounce,
-            // });
+            toast.success("success");
+            setloading(true);
+
+            // localStorage.setItem("userData", JSON.stringify(values));
+            // setUserData(values);
+
+            const existingUsers =JSON.parse(localStorage.getItem("users")) || [];
+            const updatedUsers = [...existingUsers, values];
+            localStorage.setItem("users", JSON.stringify(updatedUsers));
+            setUserData(updatedUsers);
             navigate("/BreastCancerAwareness/Login");
+            
           }
         })
         .catch((error) => {

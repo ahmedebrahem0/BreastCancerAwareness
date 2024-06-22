@@ -19,6 +19,8 @@ import FAQs from "./component/FAQs/FAQs.jsx";
 import ResetPassword from "./component/Authentication/ResetPassword/ResetPassword.jsx";
 import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
+import CartContextProvider from "./component/Context/CartContext";
+
 export default function App() {
 
   
@@ -31,7 +33,7 @@ export default function App() {
       console.log("userData from app", userData);
       setCrrUser(userData);
   }
-  console.log("crrUser from app", crrUser);
+  // console.log("crrUser from app", crrUser);
     function clearUserData() {
       localStorage.removeItem("token");
       setCrrUser(null);
@@ -62,10 +64,12 @@ export default function App() {
 
   return (
     <>
-      <div>
+      <>
+        <CartContextProvider>
           <ToastContainer theme="colored" />
           <RouterProvider router={routers} />
-      </div>
+        </CartContextProvider>
+      </>
     </>
   );
 }

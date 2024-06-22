@@ -11,8 +11,12 @@ import robot from '../../img/robot-assistant.png'
 import 'animate.css'
 import { AiFillYoutube } from 'react-icons/ai'
 import { BiLogoFacebook } from 'react-icons/bi'
-import { BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import {
+  BsInstagram,
+  BsLinkedin,
+  BsTwitter,
+  BsArrowUpCircleFill,
+} from "react-icons/bs";
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import '../../App.css'
@@ -25,7 +29,14 @@ import img7 from '../../img/symptoms-7.webp'
 import './Home.module.css'
 // import { toast } from "react-toastify";
 import { useEffect } from 'react'
+import { Link, animateScroll as scroll } from "react-scroll";
+import { NavLink} from "react-router-dom";
 export default function Home({ crrUser }) {
+  // const ScrollToTopButton = () => {
+  //   const scrollToTop = () => {
+  //     scroll.scrollToTop();
+  //   }
+  // };
   // let Cart = useContext(CartContext);
   useEffect(() => {
     toast("I Can help you?", {
@@ -312,7 +323,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
         {/* <!-- start home page  --> */}
         {isChatVisible && (
           <div className="chatbot">
-            <header>
+            <header id="UP-chatbot">
               <h2>Chatbot</h2>
               <span className="close-btn material-symbols-outlined">close</span>
             </header>
@@ -476,6 +487,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   </div>
                 </li>
               )}
+              {/* <div className="up-chat">
+                <Link to="UP-chatbot" smooth={true} duration={500}>
+                  <BsArrowUpCircleFill />
+                </Link>
+              </div> */}
             </ul>
             <div className="chat-input">
               <textarea
@@ -496,7 +512,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
           </div>
         )}
-        <div className="chatboot ">
+        <div className="chatboot">
           <img
             id="img-chat"
             src={chatboot}
@@ -530,12 +546,12 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                       className="mt-3  home-button animate__animated animate__wobble"
                       // onClick={Cart}
                     >
-                      <Link
+                      <NavLink
                         to="/BreastCancerAwareness/Login"
                         className="text-light btn-login1"
                       >
                         Login
-                      </Link>
+                      </NavLink>
                     </button>
                   </div>
                 </div>
@@ -565,8 +581,8 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
           <div className="div-3"></div>
           <div className="row text-center m-0 pt-5 pb-5 overflow-hidden">
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
-              <div className="mod  ">
-                <Link
+              <div className="mod">
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -577,7 +593,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>Lump</h6>
                 </div>
@@ -591,7 +607,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header m-auto">
-                        <img src={img3} alt="symptoms-3" />
+                        <img src={img1} alt="symptoms-3" />
                         <button
                           type="button"
                           className="btn-close"
@@ -614,7 +630,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -625,7 +641,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>breast size and shape</h6>
                 </div>
@@ -639,7 +655,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header m-auto">
-                        <img src={img3} alt="symptoms-3" />
+                        <img src={img2} alt="symptoms-3" />
                         <button
                           type="button"
                           className="btn-close"
@@ -662,7 +678,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -673,7 +689,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>breast size and shape</h6>
                 </div>
@@ -710,7 +726,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -721,7 +737,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>change in skin texture</h6>
                 </div>
@@ -758,7 +774,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -769,7 +785,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>changes in color</h6>
                 </div>
@@ -805,7 +821,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -816,7 +832,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>changes in nipples</h6>
                 </div>
@@ -830,7 +846,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header m-auto">
-                        <img src={img5} alt="symptoms-5" />
+                        <img src={img6} alt="symptoms-5" />
                         <button
                           type="button"
                           className="btn-close"
@@ -852,7 +868,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto ">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -863,7 +879,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>discharge from nipple</h6>
                 </div>

@@ -8,13 +8,30 @@ import { FaSpinner } from "react-icons/fa6";
 import axios from "axios";
 import * as Yup from "yup";
 import { baseUrl } from "../../../baseUrl";
-
+import { useLocation } from "react-router-dom";
 // import ForgetPassword from "../ForgetPassword/ForgetPassword";
 import { NavLink, useNavigate } from "react-router-dom";
 // import {  toast } from "react-toastify";
 import { toast } from "react-toastify";
 
 export default function Register({ getUserData }) {
+  // let local = JSON.parse(localStorage.getItem("users"));
+  // console.log (local[0].email)
+
+  let users = JSON.parse(localStorage.getItem("users"));
+  if (users && users.length > 0) {
+    users.forEach((user) => {
+      console.log(`Email: ${user.email}, Password: ${user.password}`);
+    });
+  } 
+  
+
+  const location = useLocation();
+  const { state } = location;
+
+  // الآن يمكنك استخدام state للوصول إلى البيانات التي تم تمريرها من صفحة التسجيل
+  console.log(state);
+  // console.log(state.email);
   let [loading, setloading] = useState(false);
 
   let navigate = useNavigate();
@@ -50,19 +67,37 @@ export default function Register({ getUserData }) {
       axios
         .post(`${baseUrl}/auth/signin`, values)
         .then((data) => {
-          if (data.data.user.email === "amezo2866@gmail.com") {
+          if (
+            data.data.user.email === "amezo2866@gmail.com") {
             console.log(data.data.user);
+
             toast.success("welcome admin");
             navigate("/BreastCancerAwareness/DashBoard");
-          } else if (data.status === 200) {
+          }
+
+          // else if (users && users.length > 0) {
+          //   users.forEach((user) => {
+          //     if (
+          //       data.data.user.email === users.email &&
+          //       data.data.user.password === users.assword
+          //     ) {
+          //       toast.success("Login successfully");
+          //       navigate("/BreastCancerAwareness/Home");
+          //       console.log(data.data.user.email, users.email);
+          //     }
+          //     // console.log(`Email: ${user.email}, Password: ${user.password}`);
+          // })
+          // }
+          else if(data.status === 200){
             localStorage.setItem("token", data.data.token);
             getUserData();
-            // console.log(data.data.user.email);
+            console.log(data.data.user.email);
             setloading(false);
             toast.success("Login successfully");
             navigate("/BreastCancerAwareness/Home");
             // console.log("error i login  is : ", data.data.user.role);
           }
+          
         })
         .catch((error) => {
           if (error.response.status === 401) {
@@ -147,7 +182,9 @@ export default function Register({ getUserData }) {
                 type="submit"
                 className="login-btn btn btn-primary w-25 mx-auto mb-3 fs-6 p-2"
               >
-                <NavLink to="/BreastCancerAwareness/ForgetPass">Forgot Password</NavLink>
+                <NavLink to="/BreastCancerAwareness/ForgetPass">
+                  Forgot Password
+                </NavLink>
               </button>
             </div>
 

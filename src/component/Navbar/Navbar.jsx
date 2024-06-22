@@ -9,7 +9,7 @@ export default function Navbar({ crrUser, clearUserData }) {
     navigate("Login");
   }
 
-  console.log("crrUser from navbar ", crrUser);
+  // console.log("crrUser from navbar ", crrUser);
   // let Cart = useContext(CartContext);
 
   return (

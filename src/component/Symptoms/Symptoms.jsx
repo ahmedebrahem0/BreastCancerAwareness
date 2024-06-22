@@ -47,7 +47,7 @@ export default function Symptoms() {
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header m-auto">
-                        <img src={img3} alt="symptoms-3" />
+                        <img src={img1} alt="symptoms-3" />
                         <button
                           type="button"
                           className="btn-close"
@@ -95,7 +95,7 @@ export default function Symptoms() {
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header m-auto">
-                        <img src={img3} alt="symptoms-3" />
+                        <img src={img2} alt="symptoms-3" />
                         <button
                           type="button"
                           className="btn-close"
@@ -286,7 +286,7 @@ export default function Symptoms() {
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header m-auto">
-                        <img src={img5} alt="symptoms-5" />
+                        <img src={img6} alt="symptoms-5" />
                         <button
                           type="button"
                           className="btn-close"

@@ -81,6 +81,9 @@ width: 30px;
     font-weight: 700;
     color: #fff;
 }
+.AddNewUser {
+    width: 200px !important;
+}
 
 .text-danger {
     color: rgb(2, 2, 48) !important;
@@ -145,7 +148,7 @@ width: 30px;
     text-align: center;
     bottom: 51px;
     margin: auto;
-    right: 60px;
+    right: 55px;
     border-radius: 50%;
     box-shadow: 2px 1px 9px #555 inset;
 }
@@ -349,14 +352,28 @@ header h2 {
 .chatbox .chat p {
   white-space: pre-wrap;
   padding: 12px 16px;
-  border-radius: 10px 10px 0 10px;
+  border-radius: 22px 20px 0 22px !important;
   max-width: 75%;
   color: #fff;
   font-size: 0.95rem;
   background: #FD70C0;
 }
+.up-chat a {
+    font-size: 33px;
+    color:#FD70C0;
+}
+.up-chat {
+    position: fixed;
+    z-index: 99999999999999;
+    height: 50px;
+left: 87%;
+    bottom: 87px;
+    width: 50px;
+
+    
+}
 .chatbox .incoming p {
-  border-radius: 10px 10px 10px 0;
+  border-radius: 22px 20px 0 22px;
 }
 .chatbox .chat p.error {
   color: #721c24;
@@ -364,7 +381,7 @@ header h2 {
 }
 .chat .alldata {
     background: #f5f5f5;
-    border-radius: 20px; 
+    border-radius: 22px 20px 0 22px; 
     padding: 0.75rem;
     
 } 

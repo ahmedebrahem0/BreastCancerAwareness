@@ -138,14 +138,45 @@ export default function Home({ crrUser }) {
   const [messages, setMessages] = useState([]); // حالة لإدارة الرسائل
   const handleSendMessage = () => {
     if (message.trim()) {
-      setMessages([...messages, { text: message, type: "outgoing" }]);
+      setMessages([...messages, { text: "treatment", type: "outgoing" }]);
       setMessage("");
 
       // لإضافة رسالة واردة بشكل تلقائي (يمكنك تعديل هذا الجزء حسب الحاجة)
       setTimeout(() => {
         setMessages((prevMessages) => [
           ...prevMessages,
-          { text: "This is an incoming message", type: "incoming" },
+          { text: `1. Surgery
+Purpose: To remove the tumor and some surrounding healthy tissue.
+Types:
+Curative Surgery: Removes the entire tumor when localized.
+Debulking Surgery: Removes part of the tumor when complete removal is not possible.
+Palliative Surgery: Relieves symptoms and improves quality of life.
+Reconstructive Surgery: Restores appearance or function after primary surgery.
+2. Radiation Therapy
+Purpose: Uses high doses of radiation to kill cancer cells or shrink tumors.
+Types:
+External Beam Radiation: Delivered from outside the body.
+Internal Radiation (Brachytherapy): Places radioactive material inside the body near cancer cells.
+Systemic Radiation: Uses radioactive substances that travel in the blood to target cancer cells.
+3. Chemotherapy
+Purpose: Uses drugs to kill rapidly dividing cancer cells.
+Methods:
+Intravenous (IV): Delivered through a vein.
+Oral: Taken by mouth.
+Intramuscular or Subcutaneous: Injected into a muscle or under the skin.
+Intrathecal: Delivered into the cerebrospinal fluid.
+4. Immunotherapy
+Purpose: Boosts the body’s immune system to fight cancer.
+Types:
+Checkpoint Inhibitors: Help the immune system recognize and attack cancer cells.
+CAR T-cell Therapy: Modifies T-cells to attack cancer cells.
+Cancer Vaccines: Stimulate the immune system to attack cancer cells.
+5. Targeted Therapy
+Purpose: Uses drugs to target specific molecules involved in cancer growth and spread.
+Types:
+Monoclonal Antibodies: Bind to specific targets on cancer cells.
+Small Molecule Inhibitors: Interfere with specific pathways or proteins involved in cancer growth.
+          `, type: "incoming" },
         ]);
       }, 1000);
     }

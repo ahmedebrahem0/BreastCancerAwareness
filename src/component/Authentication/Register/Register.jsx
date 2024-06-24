@@ -71,10 +71,8 @@ export default function Register() {
           if (date.status === 201) {
             toast.success("success");
             setloading(true);
-
             // localStorage.setItem("userData", JSON.stringify(values));
             // setUserData(values);
-
             const existingUsers =JSON.parse(localStorage.getItem("users")) || [];
             const updatedUsers = [...existingUsers, values];
             localStorage.setItem("users", JSON.stringify(updatedUsers));

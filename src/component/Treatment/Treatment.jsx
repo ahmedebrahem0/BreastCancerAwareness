@@ -33,7 +33,7 @@ export default function Treatment() {
                   <div className="tret-text p-1 animate__fadeInDown animate__animated">
                     <h3>Bahia Zayed Hospital</h3>
                     <p>
-                      {" "}
+                      
                       is an integrated medical institution for early detection
                       of breast cancer, its treatment, and providing the latest
                       methods of prevention in addition to psychological support

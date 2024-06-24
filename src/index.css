@@ -148,7 +148,7 @@ width: 30px;
     text-align: center;
     bottom: 51px;
     margin: auto;
-    right: 55px;
+    right: 60px;
     border-radius: 50%;
     box-shadow: 2px 1px 9px #555 inset;
 }
@@ -292,6 +292,9 @@ body.show-chatbot .chatbot {
   transform: scale(1);
 }
 .chatbot header {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
   padding: 16px 0;
   position: relative;
   text-align: center;
@@ -693,7 +696,10 @@ label {
 .img-area {
     height: 250px;
 }
+
+
 .img-area2 {
+    margin-bottom: 20px;
     width: 350px;
 }
 /* footer */
@@ -795,7 +801,6 @@ label {
 transform: scale(1.1);
 overflow: hidden;
 transition: transform 1s;
-
 }
 /* treatment */
 /* FAQs */

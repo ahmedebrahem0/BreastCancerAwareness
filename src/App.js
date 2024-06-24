@@ -7,6 +7,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./component/Layout/MainLayout";
 import NotFound from "./component/NotFound/NotFound";
 import Cheek from "./component/Cheek/Cheek";
+import Chart from "./component/Chart/Chart";
+import Selfexamination from "./component/Self-examination/Self-examination";
 import Login from "./component/Authentication/Login/Login.jsx";
 import Symptoms from "./component/Symptoms/Symptoms.jsx";
 import DashBoard from "./component/DashBoard/DashBoard.jsx";
@@ -18,7 +20,7 @@ import VerifyResetCode from "./component/Authentication/VerifyResetCode/VerifyCo
 import FAQs from "./component/FAQs/FAQs.jsx";
 import ResetPassword from "./component/Authentication/ResetPassword/ResetPassword.jsx";
 import { jwtDecode } from "jwt-decode";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import CartContextProvider from "./component/Context/CartContext";
 
 export default function App() {
@@ -48,6 +50,8 @@ export default function App() {
         { path: "Home", element: <Home /> },
         { path: "Register", element: <Register /> },
         { path: "Cheek", element: <Cheek /> },
+        { path: "Selfexamination", element: <Selfexamination /> },
+        { path: "Chart", element: <Chart /> },
         { path: "Symptoms", element: <Symptoms /> },
         { path: "Footer", element: <Footer /> },
         { path: "DashBoard", element: <DashBoard /> },

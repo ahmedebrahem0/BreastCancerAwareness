@@ -1,6 +1,9 @@
 import React from "react";
 import "../../index";
 export default function Cheek() {
+  const handleClick = () => {
+    window.open("https://5a8cb65cb7680e8cd3.gradio.live/", "_blank");
+  };
   return (
     <>
       <div className="cheek container my-5" id="Contact">
@@ -268,9 +271,10 @@ export default function Cheek() {
                 <h4 className="uplod">Upload image</h4>
                 <button
                   type="button"
+                  onClick={handleClick}
                   className="select-image btn btn-primary w-75 my-3"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                  // data-bs-toggle="modal"
+                  // data-bs-target="#exampleModal"
                 >
                   Select image
                 </button>
@@ -283,7 +287,7 @@ export default function Cheek() {
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div className="modal-dialog">
+                  {/* <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header">
                         <h1 className="modal-title fs-5" id="exampleModalLabel">
@@ -313,15 +317,18 @@ export default function Cheek() {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
           <div className="send">
-            <button className="send-img btn btn-success my-4 mx-1 col-sx-6 col-sm-2 col-md-12 col-lg-2 col-xl-3">
+            {/* <button
+              onClick={handleClick}
+              className="send-img btn btn-success my-4 mx-1 col-sx-6 col-sm-2 col-md-12 col-lg-2 col-xl-3"
+            >
               send image
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

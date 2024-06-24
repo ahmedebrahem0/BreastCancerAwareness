@@ -151,7 +151,7 @@ export default function DashBord() {
     <>
       <div className="container my-5">
         <div className="div d-flex align-items-center justify-content-between">
-          <h3 className="my-5">#All patients: {userData?.length || 0}</h3>
+          <h3 className="my-5">All patients: {userData?.length || 0}</h3>
           <button
             className="btn btn-outline-primary color-white m-3 AddNewUser"
             onClick={handleAddUser}

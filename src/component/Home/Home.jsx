@@ -325,6 +325,51 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
       setIsLoading(false); // إخفاء الـ spinner
     }, 2000); // تأخير لمدة ثانيتين
   };
+  const DiseaseTest = () => {
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: "FAQs information...", type: "outgoing" },
+    ]);
+
+    setIsLoading(true); // عرض الـ spinner
+
+    setTimeout(() => {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: `1. What is breast cancer?
+Breast cancer is a type of cancer that develops in the cells of the breast. It typically begins in the ducts or lobules and can spread to other parts of the body.
+
+2. What are the risk factors for breast cancer?
+Gender: Being female.
+Age: Risk increases with age.
+Family History: Having close relatives with breast cancer.
+Genetic Mutations: BRCA1 and BRCA2 mutations.
+Hormonal Factors: Early menstruation, late menopause, hormone replacement therapy.
+Lifestyle Factors: Alcohol consumption, obesity, lack of physical activity.
+3. What are the common symptoms of breast cancer?
+A lump in the breast or underarm.
+Changes in breast size, shape, or appearance.
+Skin changes such as redness or dimpling.
+Nipple changes or discharge.
+Breast pain or discomfort.
+4. How is breast cancer diagnosed?
+Physical Examination: By a healthcare provider.
+Imaging Tests: Mammograms, ultrasounds, MRIs.
+Biopsy: Removing a sample of breast tissue for testing.
+5. What are the stages of breast cancer?
+Stage 0: Non-invasive, confined to the ducts.
+Stage I: Small tumor, localized.
+Stage II: Larger tumor or spread to a few nearby lymph nodes.
+Stage III: More extensive lymph node involvement, larger tumor.
+Stage IV: Metastatic, cancer has spread to other parts of the body.
+        `,
+          type: "incoming",
+        },
+      ]);
+      setIsLoading(false); // إخفاء الـ spinner
+    }, 2000); // تأخير لمدة ثانيتين
+  };
 
 
     const handleClick = () => {
@@ -414,6 +459,16 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                               onClick={handleCause}
                             >
                               Factors that cause breast cancer?
+                            </button>
+                          </div>
+                        </li>
+                        <li className="chat incoming">
+                          <div className="div-chatt p-2">
+                            <button
+                              className="start-chattt"
+                              onClick={handleClick}
+                            >
+                              Personal x-ray test?
                             </button>
                           </div>
                         </li>

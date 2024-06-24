@@ -1,76 +1,64 @@
-import React from "react";
-import axios from "axios";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
-import { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
 
-export default function Chart() {
-  ChartJS.register(
-    ArcElement,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler
-  );
-  const [chartData, setChartData] = useState({});
+export default function ChartComponent() {
+  const chartRef = useRef(null);
+  const chartInstance = useRef(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      // Mock data for demonstration purposes
-      const data = {
-        data: [
-          { _id: "2021-01", revenue: 1000 },
-          { _id: "2021-02", revenue: 1500 },
-          { _id: "2021-03", revenue: 2000 },
-          // Add more data points as needed
-        ],
-      };
+    if (chartInstance.current) {
+      chartInstance.current.destroy();
+    }
 
-      console.log(data);
-      setChartData({
-        labels: data.data.map((item) => item._id),
+    const myChartRef = chartRef.current.getContext("2d");
+    const barColors = [
+      "rgba(255, 99, 132, 0.2)",
+      "rgba(255, 159, 64, 0.2)",
+      "rgba(255, 205, 86, 0.2)",
+      "rgba(75, 192, 192, 0.2)",
+      "rgba(54, 162, 235, 0.2)",
+      "rgba(255, 99, 132, 0.2)",
+      "rgba(255, 159, 64, 0.2)",
+      "rgba(255, 205, 86, 0.2)",
+      "rgba(75, 192, 192, 0.2)",
+      "rgba(54, 162, 235, 0.2)",
+    ];
+
+    chartInstance.current = new Chart(myChartRef, {
+      type: "bar",
+      data: {
+        labels: [
+          "Netherlands: 99.0",
+          "Cyprus 104.5",
+          "New Zealand: 92.4",
+          "Australia: 94.0",
+          "Germany: 91.6",
+          "Germany: 91.6",
+          "France 105.4",
+          "United Kingdom: 94.2",
+          "Ireland: 92.0",
+          "Belgium: 101.1",
+        ],
         datasets: [
           {
-            label: "Revenue",
-            data: data.data.map((item) => item.revenue),
-            fill: true,
-            borderColor: "rgb(255, 99, 132)",
-            backgroundColor: "rgba(255, 99, 132, 0.3)",
+            label: "Data",
+            data: [12, 18, 6, 7, 4, 2, 19, 8, 5, 15],
+            backgroundColor: barColors,
           },
         ],
-      });
-    };
+      },
+    });
 
-    fetchData();
+    return () => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+    };
   }, []);
 
   return (
-    <div className="chart">
-      <Line
-        data={chartData}
-        options={{
-          responsive: true,
-          plugins: {
-            legend: { position: "top" },
-            title: { display: true, text: "Revenue" },
-          },
-        }}
-      />
+    <div className="allCart">
+      <canvas ref={chartRef} className="chart"/>
     </div>
   );
 }

@@ -133,7 +133,16 @@ width: 30px;
 .chatboot-img:hover {
     cursor: pointer;
 }
-
+.allCart {
+    display: flex;
+    justify-self: center;
+    align-items:center;
+}
+.chart {
+    margin: 100px auto;
+    height: 600px !important;
+    width: 85% !important;
+}
 .start-chattt {
         max-width: 100%;
     padding: 12px 30px;

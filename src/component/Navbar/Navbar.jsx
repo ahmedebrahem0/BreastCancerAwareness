@@ -61,6 +61,11 @@ export default function Navbar({ crrUser, clearUserData }) {
               </NavLink>
             </li>
             <li className="nav-item ms-lg-4 position-relative">
+              <NavLink className="nav-link text-light" to="Chart">
+                Chart
+              </NavLink>
+            </li>
+            <li className="nav-item ms-lg-4 position-relative">
               <NavLink className="nav-link text-light" to="FAQs">
                 FAQs
               </NavLink>
@@ -71,11 +76,6 @@ export default function Navbar({ crrUser, clearUserData }) {
               </NavLink>
             </li>
 
-            <li className="nav-item ms-lg-4 position-relative">
-              <NavLink className="nav-link text-light" to="Chart">
-                Chart
-              </NavLink>
-            </li>
             {/* <li className="nav-item ms-lg-4 position-relative">
               <NavLink
                 className="nav-link text-light"

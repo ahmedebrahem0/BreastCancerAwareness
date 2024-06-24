@@ -83,7 +83,7 @@ export default function Symptoms() {
                   />
                 </Link>
                 <div className="symptoms-1-text">
-                  <h6>breast size and shape</h6>
+                  <h6>Swelling in the armpits</h6>
                 </div>
                 <div
                   className="modal fade"

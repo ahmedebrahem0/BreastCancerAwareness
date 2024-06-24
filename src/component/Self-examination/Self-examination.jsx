@@ -45,11 +45,11 @@ export default function Selfexamination() {
                 </div>
               </div>
               <div className="row mt-2 tret1">
-                <div className="tret-imgg overflow-hidden col-sx-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 animate__fadeInRight animate__animated animate__delay-1s">
+                <div className="tret-imgg overflow-hidden col-sx-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 animate__fadeInRight animate__animated animate__delay-1s ">
                   <img src={self3} className="w-25 img-fluid" alt="Bahey.jpg" />
                 </div>
                 <div className="col-sx-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 ">
-                  <div className="tret-text p-1 animate__fadeInRight animate__delay-1s animate__fast animate__animated">
+                  <div className="tret-text p-1 animate__fadeInRight animate__delay-1s  animate__slow  animate__animated">
                     <h3>The second step is in front of the mirror</h3>
                     <p>
                       Raise your hands up and make sure that there are no
@@ -66,7 +66,7 @@ export default function Selfexamination() {
                   <img src={self5} className="w-25 img-fluid" alt="Bahey.jpg" />
                 </div>
                 <div className="col-sx-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 ">
-                  <div className="tret-text p-1 animate__fadeInRight animate__delay-1s animate__fast animate__animated">
+                  <div className="tret-text p-1 animate__fadeInRight animate__delay-1s animate__slower animate__animated">
                     <h3>The third step is on the bed</h3>
                     <p>
                       Lie on the bed and place a pillow under the shoulder of

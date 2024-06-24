@@ -15,6 +15,8 @@ import self6 from "../../img/self-6.png";
 import self7 from "../../img/self-7.png";
 import self8 from "../../img/self-8.png";
 import self9 from "../../img/self-9.png";
+import Chart from "chart.js/auto";
+
 import 'animate.css'
 import { AiFillYoutube } from 'react-icons/ai'
 import { BiLogoFacebook } from 'react-icons/bi'
@@ -35,7 +37,7 @@ import home from '../../img/home-image-removebg-preview.png'
 import img7 from '../../img/symptoms-7.webp'
 import './Home.module.css'
 // import { toast } from "react-toastify";
-import { useEffect } from 'react'
+import { useEffect, useRef } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { NavLink} from "react-router-dom";
 export default function Home({ crrUser }) {
@@ -45,6 +47,60 @@ export default function Home({ crrUser }) {
   //   }
   // };
   // let Cart = useContext(CartContext);
+    const chartRef = useRef(null);
+    const chartInstance = useRef(null);
+
+    useEffect(() => {
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+
+      const myChartRef = chartRef.current.getContext("2d");
+      const barColors = [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(255, 205, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+        "rgba(255, 205, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+      ];
+
+      chartInstance.current = new Chart(myChartRef, {
+        type: "bar",
+        data: {
+          labels: [
+            "Netherlands: 99.0",
+            "Cyprus 104.5",
+            "New Zealand: 92.4",
+            "Australia: 94.0",
+            "Germany: 91.6",
+            "Germany: 91.6",
+            "France 105.4",
+            "United Kingdom: 94.2",
+            "Ireland: 92.0",
+            "Belgium: 101.1",
+          ],
+          datasets: [
+            {
+              label: "Data",
+              data: [12, 18, 6, 7, 4, 2, 19, 8, 5, 15],
+              backgroundColor: barColors,
+            },
+          ],
+        },
+      });
+
+      return () => {
+        if (chartInstance.current) {
+          chartInstance.current.destroy();
+        }
+      };
+    }, []);
+
 
   const handleCloseChatbox = () => {
     setIsChatVisible(false);
@@ -1432,6 +1488,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
       </div>
       {/* Treatment */}
       {/* FAQs */}
+      {/* chart */}
+      <div className="allCart">
+        <canvas ref={chartRef} className="chart" />
+      </div>
+      {/* chart */}
       <div className="faqs my-5">
         <div className="container my-5">
           <div className="row">

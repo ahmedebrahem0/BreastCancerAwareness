@@ -96,6 +96,7 @@ export default function Register() {
 
   return (
     <>
+      {}
       <div className="">
         <div className="home-img d-flex justify-content-center align-items-center">
           <div className=" bac-blur  px-3 d-flex justify-content-center align-items-center flex-column">

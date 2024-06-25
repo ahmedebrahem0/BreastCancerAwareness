@@ -14,11 +14,11 @@ export default function Navbar({ crrUser, clearUserData }) {
 
   return (
     <nav id="main-nav" className="navbar navbar-expand-lg fixed-top ">
-      <div className="container d-flex justify-content-center align-items-center overflow-hidden">
-        <div className="frist-img">
+      <div className="w-100 d-flex justify-content-center align-items-center overflow-hidden">
+        <div className="frist-img mx-5">
           <Link className="navbar-brand d-flex align-items-center fs-6" to="/">
-            {/* <img src={img2} width="30px" alt="img in home" /> */}
-            Breast Cancer Detection
+            <img src={img2} width="30px" alt="img in home" />
+            <h5>Breast Cancer Detection</h5>
           </Link>
         </div>
         <button
@@ -76,20 +76,12 @@ export default function Navbar({ crrUser, clearUserData }) {
               </NavLink>
             </li>
 
-            {/* <li className="nav-item ms-lg-4 position-relative">
-              <NavLink
-                className="nav-link text-light"
-                to="DashBord"
-              >
-                DashBord
-              </NavLink>
-            </li> */}
             {localStorage?.getItem("token") ? (
-              <li type="submit" className="go mx-5 btn btn-outline-light">
+              <li type="submit" className="go mx-4 btn btn-outline-light">
                 <span onClick={LogoutUser}>Logout</span>
               </li>
             ) : (
-              <li type="submit" className="go mx-5 btn btn-outline-light">
+              <li type="submit" className="go mx-4 btn btn-outline-light">
                 <Link to="Register">Register</Link>
               </li>
             )}

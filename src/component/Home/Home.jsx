@@ -743,7 +743,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
           <div className="div-2"></div>
           <div className="div-3"></div>
           <div className="row text-center m-0 pt-5 pb-5 overflow-hidden">
-            <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
+            <div
+              className="col-md-2 symw m-auto d-flex justify-content-center align-items-center
+            animate__fadeInLeft animate__animated
+            "
+            >
               <div className="mod  ">
                 <button
                   type="button"
@@ -751,11 +755,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal1"
                 >
-                  <img
-                    src={img1}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated"
-                  />
+                  <img src={img1} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>Lump</h6>
@@ -791,7 +791,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                 </div>
               </div>
             </div>
-            <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
+            <div
+              className="col-md-2 symw m-auto d-flex justify-content-center align-items-center
+            animate__fadeInLeft animate__animated animate__slow
+            "
+            >
               <div className="mod  ">
                 <button
                   type="button"
@@ -799,11 +803,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal2"
                 >
-                  <img
-                    src={img2}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated animate__slow"
-                  />
+                  <img src={img2} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>Swelling in the armpits</h6>
@@ -839,7 +839,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                 </div>
               </div>
             </div>
-            <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
+            <div
+              className="col-md-2 symw m-auto d-flex justify-content-center align-items-center
+            animate__fadeInLeft animate__animated animate__slow
+            "
+            >
               <div className="mod  ">
                 <button
                   type="button"
@@ -847,11 +851,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal3"
                 >
-                  <img
-                    src={img3}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated animate__slow"
-                  />
+                  <img src={img3} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>breast size and shape</h6>
@@ -887,7 +887,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                 </div>
               </div>
             </div>
-            <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
+            <div
+              className="col-md-2 symw m-auto d-flex justify-content-center align-items-center
+            animate__fadeInLeft animate__animated animate__slow
+            "
+            >
               <div className="mod  ">
                 <button
                   type="button"
@@ -895,11 +899,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal4"
                 >
-                  <img
-                    src={img4}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated animate__slow"
-                  />
+                  <img src={img4} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>change in skin texture</h6>
@@ -935,7 +935,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                 </div>
               </div>
             </div>
-            <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
+            <div
+              className="col-md-2 symw m-auto d-flex justify-content-center align-items-center
+            animate__fadeInLeft animate__animated animate__slow
+            "
+            >
               <div className="mod  ">
                 <button
                   type="button"
@@ -943,11 +947,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal5"
                 >
-                  <img
-                    src={img5}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated animate__slow"
-                  />
+                  <img src={img5} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>changes in color</h6>
@@ -982,7 +982,11 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                 </div>
               </div>
             </div>
-            <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
+            <div
+              className="col-md-2 symw m-auto d-flex justify-content-center align-items-center
+            animate__fadeInLeft animate__animated animate__slow
+            "
+            >
               <div className="mod  ">
                 <button
                   type="button"
@@ -990,11 +994,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal6"
                 >
-                  <img
-                    src={img6}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated animate__slow"
-                  />
+                  <img src={img6} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>changes in nipples</h6>
@@ -1029,7 +1029,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                 </div>
               </div>
             </div>
-            <div className="col-md-2 symw m-auto ">
+            <div className="col-md-2 symw m-auto animate__fadeInLeft animate__animated animate__slow">
               <div className="mod  ">
                 <button
                   type="button"
@@ -1037,11 +1037,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal7"
                 >
-                  <img
-                    src={img7}
-                    alt="symptoms-1"
-                    className="animate__fadeInLeft animate__animated animate__slow"
-                  />
+                  <img src={img7} alt="symptoms-1" className="" />
                 </button>
                 <div className="symptoms-1-text">
                   <h6>discharge from nipple</h6>

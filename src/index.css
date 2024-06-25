@@ -22,6 +22,7 @@ nav{
     font-size: 18px !important;
     width: 0px;
     background-color: red;
+    /* margin: 0px !important; */
 }
 /*
 .frist-img img{
@@ -771,7 +772,7 @@ label {
 }
 
 .symw {
-    width: 194px;
+    width: 166px;
     display: flex;
     justify-content:center;
     align-items:center;
@@ -822,6 +823,16 @@ transition: transform 1s;
 /* FAQs */
 @media(max-width:376px) {
 
+    .frist-img {
+    margin: 0px !important;
+}
+.tret-imgg{
+        text-align: center;
+        width: 100%;
+    }
+    .tret-imgg img {
+        width: 50% !important;
+    }
         /* .textarea{
         padding: 0 179px !important;
     } */
@@ -1001,6 +1012,13 @@ bottom: -14px;
 }
 
 @media(max-width:540px) {
+    .tret-imgg{
+        text-align: center;
+        width: 100%;
+    }
+    .tret-imgg img {
+        width: 50% !important;
+    }
             .cheek .genderr {
         font-size: 13px;
     }
@@ -1022,6 +1040,9 @@ bottom: -14px;
     
 }
 @media(max-width:540px) {
+        .frist-img {
+    margin: 0px !important;
+}
         .cheek .genderr {
         font-size: 13px;
     }

@@ -745,7 +745,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
           <div className="row text-center m-0 pt-5 pb-5 overflow-hidden">
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -756,7 +756,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>Lump</h6>
                 </div>
@@ -793,7 +793,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -804,7 +804,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>Swelling in the armpits</h6>
                 </div>
@@ -841,7 +841,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -852,7 +852,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>breast size and shape</h6>
                 </div>
@@ -889,7 +889,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -900,7 +900,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>change in skin texture</h6>
                 </div>
@@ -937,7 +937,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -948,7 +948,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>changes in color</h6>
                 </div>
@@ -984,7 +984,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto d-flex justify-content-center align-items-center">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -995,7 +995,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>changes in nipples</h6>
                 </div>
@@ -1031,7 +1031,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
             </div>
             <div className="col-md-2 symw m-auto ">
               <div className="mod  ">
-                <Link
+                <button
                   type="button"
                   className="symw"
                   data-bs-toggle="modal"
@@ -1042,7 +1042,7 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
                     alt="symptoms-1"
                     className="animate__fadeInLeft animate__animated animate__slow"
                   />
-                </Link>
+                </button>
                 <div className="symptoms-1-text">
                   <h6>discharge from nipple</h6>
                 </div>

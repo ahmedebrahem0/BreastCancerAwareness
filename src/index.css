@@ -19,6 +19,7 @@ nav{
 }
 
 .frist-img {
+    font-size: 18px !important;
     width: 0px;
     background-color: red;
 }

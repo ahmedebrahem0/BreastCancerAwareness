@@ -16,8 +16,8 @@ export default function Navbar({ crrUser, clearUserData }) {
     <nav id="main-nav" className="navbar navbar-expand-lg fixed-top ">
       <div className="container d-flex justify-content-center align-items-center overflow-hidden">
         <div className="frist-img">
-          <Link className="navbar-brand d-flex align-items-center" to="/">
-            <img src={img2} width="30px" alt="img in home" />
+          <Link className="navbar-brand d-flex align-items-center fs-6" to="/">
+            {/* <img src={img2} width="30px" alt="img in home" /> */}
             Breast Cancer Detection
           </Link>
         </div>

@@ -9,18 +9,16 @@ export default function Navbar({ crrUser, clearUserData }) {
     navigate("Login");
   }
 
-  // console.log("crrUser from navbar ", crrUser);
-  // let Cart = useContext(CartContext);
-
   return (
     <nav id="main-nav" className="navbar navbar-expand-lg fixed-top ">
-      <div className="w-100 d-flex justify-content-center align-items-center overflow-hidden">
-        <div className="frist-img mx-5">
-          <Link className="navbar-brand d-flex align-items-center fs-6" to="/">
-            <img src={img2} width="30px" alt="img in home" />
-            <h5>Breast Cancer Detection</h5>
-          </Link>
-        </div>
+      <div className="container-fluid">
+        {/* الشعار */}
+        <Link className="navbar-brand d-flex align-items-center" to="/">
+          <img src={img2} width="30px" alt="Logo" />
+          <h5 className="ms-2  d-md-block">Breast Cancer Detection</h5>
+        </Link>
+
+        {/* زر القائمة (Toggle Button) */}
         <button
           className="navbar-toggler"
           type="button"
@@ -30,59 +28,63 @@ export default function Navbar({ crrUser, clearUserData }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* محتوى القائمة */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item position-relative">
-              <NavLink
-                className="nav-link active text-light"
-                aria-current="page"
-                to="Home"
-              >
-                {/* {crrUser.name} */}
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+            <li className="nav-item">
+              <NavLink className="nav-link text-light" to="Home">
                 Home
-                {/* Home */}
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-4 position-relative">
+            <li className="nav-item">
               <NavLink className="nav-link text-light" to="Symptoms">
                 Symptoms
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-4 position-relative">
+            <li className="nav-item">
               <NavLink className="nav-link text-light" to="Selfexamination">
                 Self-examination
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-4 position-relative">
+            <li className="nav-item">
               <NavLink className="nav-link text-light" to="Treatment">
                 Treatment
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-4 position-relative">
+            <li className="nav-item">
               <NavLink className="nav-link text-light" to="Chart">
                 Chart
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-4 position-relative">
+            <li className="nav-item">
               <NavLink className="nav-link text-light" to="FAQs">
                 FAQs
               </NavLink>
             </li>
-            <li className="nav-item ms-lg-4 position-relative">
+            <li className="nav-item">
               <NavLink className="nav-link text-light" to="Cheek">
                 Check
               </NavLink>
             </li>
 
+            {/* زر التسجيل أو الخروج */}
             {localStorage?.getItem("token") ? (
-              <li type="submit" className="go mx-4 btn btn-outline-light">
-                <span onClick={LogoutUser}>Logout</span>
+              <li className="nav-item">
+                <button
+                  className="btn btn-outline-light mx-2"
+                  onClick={LogoutUser}
+                >
+                  Logout
+                </button>
               </li>
             ) : (
-              <li type="submit" className="go mx-4 btn btn-outline-light">
-                <Link to="Register">Register</Link>
+              <li className="nav-item">
+                <Link className="btn btn-outline-light mx-2" to="Register">
+                  Register
+                </Link>
               </li>
             )}
           </ul>

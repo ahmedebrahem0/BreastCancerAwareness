@@ -1,74 +1,62 @@
-# Getting Started with Create React App
+# Breast Cancer Detection - React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An Arabic-first educational and assistant app about breast cancer awareness, symptoms, treatment options, and self-examination guidance. Built with React.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+- Chatbot assistant in Arabic with quick action buttons (treatment, symptoms, hospitals, risks, FAQs)
+- Smart typing effect and smooth auto-scroll to the latest message
+- Greeting appears once only; no duplication or sticky header
+- Search inside chat, save conversations to localStorage, and reload saved chats
+- Responsive layout with mobile-friendly chat and fixed input bar
+- Floating robot launcher with centered shadow aligned under the icon on mobile
+- Visual sections for awareness, FAQs, and dashboard content
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js 16+ and npm 8+
 
-### `npm test`
+### Install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+### Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Build
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Key directories:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `src/component/Home/` – main page and chatbot implementation
+- `src/index.css` – global styles including chatbot and launcher
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tech Stack
 
-## Learn More
+- React, React Router
+- React Icons, Chart.js
+- React Toastify
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Accessibility & UX
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Right-to-left Arabic content
+- Large tap targets and readable color contrast
+- Smooth animations kept subtle for readability
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-        <!-- "react-toastify": "^10.0.5",
-        "react-notifications-component": "^4.0.1", -->
+Private project for graduation purposes.

@@ -1,13 +1,13 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import { LuSendHorizonal } from "react-icons/lu";
-import img1 from '../../img/symptoms-1.webp'
-import img2 from '../../img/symptoms-2.webp'
-import img3 from '../../img/symptoms-3.webp'
-import img4 from '../../img/symptoms-4.webp'
-import img5 from '../../img/symptoms-5.webp'
-import img6 from '../../img/symptoms-6.webp'
-import robot from '../../img/robot-assistant.png'
+import img1 from "../../img/symptoms-1.webp";
+import img2 from "../../img/symptoms-2.webp";
+import img3 from "../../img/symptoms-3.webp";
+import img4 from "../../img/symptoms-4.webp";
+import img5 from "../../img/symptoms-5.webp";
+import img6 from "../../img/symptoms-6.webp";
+import robot from "../../img/robot-assistant.png";
 import self1 from "../../img/self-1.jpg";
 import self3 from "../../img/self-3.png";
 import self5 from "../../img/self-5.jpg";
@@ -17,93 +17,101 @@ import self8 from "../../img/self-8.png";
 import self9 from "../../img/self-9.png";
 import Chart from "chart.js/auto";
 
-import 'animate.css'
-import { AiFillYoutube } from 'react-icons/ai'
-import { BiLogoFacebook } from 'react-icons/bi'
+import "animate.css";
+import { AiFillYoutube } from "react-icons/ai";
+import { BiLogoFacebook } from "react-icons/bi";
 import {
   BsInstagram,
   BsLinkedin,
   BsTwitter,
   BsArrowUpCircleFill,
 } from "react-icons/bs";
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import '../../App.css'
-import Bahey from '../../img/Bahey.webp'
-import Children from "../../img/Children's Cancer Hospital or Hospital 57357.webp"
-import National from '../../img/National-Cancer-Institute.webp'
-import chatboot from '../../img/chatboot.webp'
-import home from '../../img/home-image-removebg-preview.png'
-import img7 from '../../img/symptoms-7.webp'
-import './Home.module.css'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../../App.css";
+import Bahey from "../../img/Bahey.webp";
+import Children from "../../img/Children's Cancer Hospital or Hospital 57357.webp";
+import National from "../../img/National-Cancer-Institute.webp";
+import chatboot from "../../img/chatboot.webp";
+import home from "../../img/home-image-removebg-preview.png";
+import img7 from "../../img/symptoms-7.webp";
+import "./Home.module.css";
 // import { toast } from "react-toastify";
 import { useEffect, useRef } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+/**
+ * مكون الصفحة الرئيسية مع الـ chatbot المحسن
+ * يحتوي على:
+ * - نظام chatbot ذكي للرد على الأسئلة
+ * - ميزات البحث وحفظ المحادثات
+ * - تأثيرات بصرية متقدمة
+ * - واجهة مستخدم محسنة
+ */
 export default function Home({ crrUser }) {
-  // const ScrollToTopButton = () => {
-  //   const scrollToTop = () => {
-  //     scroll.scrollToTop();
-  //   }
-  // };
-  // let Cart = useContext(CartContext);
-    const chartRef = useRef(null);
-    const chartInstance = useRef(null);
+  // مراجع للرسم البياني
+  const chartRef = useRef(null);
+  const chartInstance = useRef(null);
 
-    useEffect(() => {
+  useEffect(() => {
+    if (chartInstance.current) {
+      chartInstance.current.destroy();
+    }
+
+    const myChartRef = chartRef.current.getContext("2d");
+    const barColors = [
+      "rgba(255, 99, 132, 0.2)",
+      "rgba(255, 159, 64, 0.2)",
+      "rgba(255, 205, 86, 0.2)",
+      "rgba(75, 192, 192, 0.2)",
+      "rgba(54, 162, 235, 0.2)",
+      "rgba(255, 99, 132, 0.2)",
+      "rgba(255, 159, 64, 0.2)",
+      "rgba(255, 205, 86, 0.2)",
+      "rgba(75, 192, 192, 0.2)",
+      "rgba(54, 162, 235, 0.2)",
+    ];
+
+    chartInstance.current = new Chart(myChartRef, {
+      type: "bar",
+      data: {
+        labels: [
+          "Netherlands: 99.0",
+          "Cyprus 104.5",
+          "New Zealand: 92.4",
+          "Australia: 94.0",
+          "Germany: 91.6",
+          "Germany: 91.6",
+          "France 105.4",
+          "United Kingdom: 94.2",
+          "Ireland: 92.0",
+          "Belgium: 101.1",
+        ],
+        datasets: [
+          {
+            label: "Data",
+            data: [12, 18, 6, 7, 4, 2, 19, 8, 5, 15],
+            backgroundColor: barColors,
+          },
+        ],
+      },
+    });
+
+    return () => {
       if (chartInstance.current) {
         chartInstance.current.destroy();
       }
-
-      const myChartRef = chartRef.current.getContext("2d");
-      const barColors = [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-        "rgba(255, 205, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-        "rgba(255, 205, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-      ];
-
-      chartInstance.current = new Chart(myChartRef, {
-        type: "bar",
-        data: {
-          labels: [
-            "Netherlands: 99.0",
-            "Cyprus 104.5",
-            "New Zealand: 92.4",
-            "Australia: 94.0",
-            "Germany: 91.6",
-            "Germany: 91.6",
-            "France 105.4",
-            "United Kingdom: 94.2",
-            "Ireland: 92.0",
-            "Belgium: 101.1",
-          ],
-          datasets: [
-            {
-              label: "Data",
-              data: [12, 18, 6, 7, 4, 2, 19, 8, 5, 15],
-              backgroundColor: barColors,
-            },
-          ],
-        },
-      });
-
-      return () => {
-        if (chartInstance.current) {
-          chartInstance.current.destroy();
-        }
-      };
-    }, []);
-
+    };
+  }, []);
 
   const handleCloseChatbox = () => {
     setIsChatVisible(false);
+    // إعادة إظهار الأزرار عند إغلاق الـ chatbot
+    setShowButtons(true);
+    // إعادة تعيين المحادثة
+    setMessages([
+      { text: "مرحباً! أنا مساعدك الذكي لسرطان الثدي 🤖", type: "incoming" },
+    ]);
   };
 
   useEffect(() => {
@@ -124,344 +132,520 @@ export default function Home({ crrUser }) {
     even.currentTarget.classList.remove("animate__infinite");
   };
 
-  const [isChatVisible, setIsChatVisible] = useState(false);
+  // === حالات الـ chatbot ===
+  const [isChatVisible, setIsChatVisible] = useState(false); // إظهار/إخفاء الـ chatbot
+  const [message, setMessage] = useState(""); // النص المدخل من المستخدم
+  const [messages, setMessages] = useState([
+    { text: "مرحباً! أنا مساعدك الذكي لسرطان الثدي 🤖", type: "incoming" },
+  ]); // قائمة الرسائل
+  const [isLoading, setIsLoading] = useState(false); // حالة التحميل
+  const [isTyping, setIsTyping] = useState(false); // حالة الكتابة التدريجية
+  const [typingText, setTypingText] = useState(""); // النص أثناء الكتابة
+  const [searchTerm, setSearchTerm] = useState(""); // مصطلح البحث
+  const [showSearch, setShowSearch] = useState(false); // إظهار شريط البحث
+  const [savedChats, setSavedChats] = useState([]); // المحادثات المحفوظة
+  const [showSavedChats, setShowSavedChats] = useState(false); // إظهار قائمة المحادثات المحفوظة
+  const [showButtons, setShowButtons] = useState(true); // إظهار/إخفاء أزرار الخيارات
+  const chatboxRef = useRef(null); // مرجع لقائمة الرسائل للتمرير داخلها
 
+  /**
+   * تبديل إظهار/إخفاء الـ chatbot
+   */
   const toggleChatVisibility = () => {
     setIsChatVisible(!isChatVisible);
   };
 
-  const [message, setMessage] = useState(""); // حالة لإدارة قيمة الحقل النصي
+  /**
+   * تحديث النص المدخل من المستخدم
+   */
   const handleInputChange = (event) => {
     setMessage(event.target.value);
   };
 
-  const [messages, setMessages] = useState([]); // حالة لإدارة الرسائل
+  /**
+   * نظام ذكي للرد على الرسائل النصية
+   * يحلل رسالة المستخدم ويجد الرد المناسب بناءً على الكلمات المفتاحية
+   * @param {string} userMessage - رسالة المستخدم
+   * @returns {object} - كائن يحتوي على النص ونوع الرسالة
+   */
+  const getBotResponse = (userMessage) => {
+    const message = userMessage.toLowerCase();
+
+    // كلمات مفتاحية للعلاج
+    if (
+      message.includes("علاج") ||
+      message.includes("treatment") ||
+      message.includes("كيفية العلاج")
+    ) {
+      return {
+        text: `🔬 **طرق علاج سرطان الثدي:**
+
+**1. الجراحة:**
+• الجراحة الاستئصالية: لإزالة الورم بالكامل
+• الجراحة التجميلية: لاستعادة شكل الثدي
+• استئصال الغدد الليمفاوية
+
+**2. العلاج الإشعاعي:**
+• العلاج الإشعاعي الخارجي
+• العلاج الإشعاعي الداخلي (البراكي ثيرابي)
+
+**3. العلاج الكيميائي:**
+• عبر الوريد أو الفم
+• يقتل الخلايا السرطانية سريعة الانقسام
+
+**4. العلاج المناعي:**
+• يقوي جهاز المناعة لمحاربة السرطان
+• العلاج الموجه للخلايا السرطانية
+
+**5. العلاج الهرموني:**
+• لمنع تأثير الهرمونات على الخلايا السرطانية`,
+        type: "incoming",
+      };
+    }
+
+    // كلمات مفتاحية للأعراض
+    if (
+      message.includes("أعراض") ||
+      message.includes("symptoms") ||
+      message.includes("علامات")
+    ) {
+      return {
+        text: `⚠️ **أعراض سرطان الثدي:**
+
+**الأعراض الشائعة:**
+• كتلة أو تورم في الثدي أو تحت الإبط
+• تغير في حجم أو شكل الثدي
+• تغيرات في جلد الثدي (احمرار، تجعد)
+• تغيرات في الحلمة (انقلاب، إفرازات)
+• ألم مستمر في الثدي
+• تورم في الغدد الليمفاوية
+
+**متى يجب استشارة الطبيب:**
+• عند ملاحظة أي من هذه الأعراض
+• إجراء فحص دوري للثدي
+• المتابعة مع طبيب الأورام`,
+        type: "incoming",
+      };
+    }
+
+    // كلمات مفتاحية للمستشفيات
+    if (
+      message.includes("مستشفى") ||
+      message.includes("hospital") ||
+      message.includes("مركز") ||
+      message.includes("طبيب")
+    ) {
+      return {
+        text: `🏥 **أفضل مستشفيات سرطان الثدي في مصر:**
+
+**1. المعهد القومي للأورام - جامعة القاهرة**
+• متخصص في علاج الأورام
+• أحدث التقنيات العلاجية
+
+**2. مستشفى 57357**
+• رائد في علاج السرطان
+• خدمات متكاملة للمرضى
+
+**3. مستشفيات مجربى**
+• شبكة مستشفيات متطورة
+• أطباء متخصصون في الأورام
+
+**4. مركز القاهرة للأورام**
+• متخصص في علاج سرطان الثدي
+• برامج علاجية شاملة
+
+**5. مستشفى دار الفؤاد**
+• تقنيات حديثة
+• فريق طبي متخصص`,
+        type: "incoming",
+      };
+    }
+
+    // كلمات مفتاحية للأسباب
+    if (
+      message.includes("سبب") ||
+      message.includes("cause") ||
+      message.includes("عوامل") ||
+      message.includes("خطر")
+    ) {
+      return {
+        text: `🔍 **عوامل خطر سرطان الثدي:**
+
+**العوامل الوراثية:**
+• طفرات جينية (BRCA1, BRCA2)
+• تاريخ عائلي للمرض
+
+**العوامل الهرمونية:**
+• التعرض الطويل للإستروجين
+• بداية مبكرة للدورة الشهرية
+• انقطاع متأخر للطمث
+
+**عوامل نمط الحياة:**
+• شرب الكحول
+• السمنة
+• قلة النشاط البدني
+• النظام الغذائي غير الصحي
+
+**عوامل أخرى:**
+• التقدم في العمر
+• التعرض للإشعاع
+• التاريخ المرضي السابق`,
+        type: "incoming",
+      };
+    }
+
+    // كلمات مفتاحية للأسئلة الشائعة
+    if (
+      message.includes("سؤال") ||
+      message.includes("faq") ||
+      message.includes("معلومات") ||
+      message.includes("معرفة")
+    ) {
+      return {
+        text: `❓ **الأسئلة الشائعة:**
+
+**1. ما هو سرطان الثدي؟**
+مرض يحدث عندما تنمو خلايا الثدي بشكل غير طبيعي.
+
+**2. من هم الأكثر عرضة؟**
+النساء فوق 50 عام، خاصة من لديهن تاريخ عائلي.
+
+**3. كيف يتم التشخيص؟**
+• الفحص السريري
+• الماموجرام
+• الموجات فوق الصوتية
+• الخزعة
+
+**4. هل يمكن الوقاية؟**
+نعم، من خلال:
+• الفحص الدوري
+• نمط حياة صحي
+• تجنب عوامل الخطر`,
+        type: "incoming",
+      };
+    }
+
+    // رد افتراضي
+    return {
+      text: `مرحباً! أنا مساعدك الذكي لسرطان الثدي 🤖
+
+يمكنني مساعدتك في:
+• معلومات عن العلاج
+• الأعراض والعلامات
+• المستشفيات المتخصصة
+• عوامل الخطر
+• الأسئلة الشائعة
+
+اكتب سؤالك وسأجيب عليك فوراً! 💕`,
+      type: "incoming",
+    };
+  };
+
+  /**
+   * تأثير الكتابة التدريجية للرسائل
+   * يكتب النص حرفاً بحرف لإعطاء تأثير طبيعي
+   * @param {string} text - النص المراد كتابته
+   * @param {function} callback - دالة تنفيذ عند انتهاء الكتابة
+   */
+  const typeMessage = (text, callback) => {
+    setIsTyping(true);
+    setTypingText("");
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        setTypingText(text.substring(0, index + 1));
+        index++;
+      } else {
+        clearInterval(interval);
+        setIsTyping(false);
+        if (callback) callback();
+      }
+    }, 30); // سرعة الكتابة
+  };
+
+  /**
+   * إرسال رسالة المستخدم والحصول على رد البوت
+   * يدعم تأثير الكتابة التدريجية
+   */
   const handleSendMessage = () => {
     if (message.trim()) {
-      setMessages([...messages, { text: "treatment", type: "outgoing" }]);
+      // إخفاء الأزرار عند إرسال رسالة
+      setShowButtons(false);
+
+      // إضافة رسالة المستخدم بدون إعادة إدراج رسالة الترحيب
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: message, type: "outgoing" },
+      ]);
+
+      const userMessage = message;
       setMessage("");
 
-      // لإضافة رسالة واردة بشكل تلقائي (يمكنك تعديل هذا الجزء حسب الحاجة)
+      // عرض مؤشر التحميل
+      setIsLoading(true);
+
+      // الحصول على رد البوت مع تأثير الكتابة
       setTimeout(() => {
+        const botResponse = getBotResponse(userMessage);
+        setIsLoading(false);
+
+        // إضافة رسالة البوت مع تأثير الكتابة
         setMessages((prevMessages) => [
           ...prevMessages,
-          { text: `1. Surgery
-Purpose: To remove the tumor and some surrounding healthy tissue.
-Types:
-Curative Surgery: Removes the entire tumor when localized.
-Debulking Surgery: Removes part of the tumor when complete removal is not possible.
-Palliative Surgery: Relieves symptoms and improves quality of life.
-Reconstructive Surgery: Restores appearance or function after primary surgery.
-2. Radiation Therapy
-Purpose: Uses high doses of radiation to kill cancer cells or shrink tumors.
-Types:
-External Beam Radiation: Delivered from outside the body.
-Internal Radiation (Brachytherapy): Places radioactive material inside the body near cancer cells.
-Systemic Radiation: Uses radioactive substances that travel in the blood to target cancer cells.
-3. Chemotherapy
-Purpose: Uses drugs to kill rapidly dividing cancer cells.
-Methods:
-Intravenous (IV): Delivered through a vein.
-Oral: Taken by mouth.
-Intramuscular or Subcutaneous: Injected into a muscle or under the skin.
-Intrathecal: Delivered into the cerebrospinal fluid.
-4. Immunotherapy
-Purpose: Boosts the body’s immune system to fight cancer.
-Types:
-Checkpoint Inhibitors: Help the immune system recognize and attack cancer cells.
-CAR T-cell Therapy: Modifies T-cells to attack cancer cells.
-Cancer Vaccines: Stimulate the immune system to attack cancer cells.
-5. Targeted Therapy
-Purpose: Uses drugs to target specific molecules involved in cancer growth and spread.
-Types:
-Monoclonal Antibodies: Bind to specific targets on cancer cells.
-Small Molecule Inhibitors: Interfere with specific pathways or proteins involved in cancer growth.
-          `, type: "incoming" },
+          { ...botResponse, text: "", isTyping: true },
         ]);
+
+        // بدء تأثير الكتابة
+        typeMessage(botResponse.text, () => {
+          setMessages((prevMessages) =>
+            prevMessages.map((msg, index) =>
+              index === prevMessages.length - 1
+                ? { ...msg, isTyping: false, text: botResponse.text }
+                : msg
+            )
+          );
+        });
       }, 1000);
     }
   };
 
-  const [datachat, SetDatachat] = useState(false);
-  const chatbotData = () => {
-    SetDatachat(!datachat);
-  };
-
   // const [Treatment, SetTreatment] = useState(false);
   //spinner
-  const [isLoading, setIsLoading] = useState(false);
-  const handleTreatment = () => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: "Treatment information...", type: "outgoing" },
-    ]);
 
-    setIsLoading(true); // عرض الـ spinner
+  /**
+   * تصفية الرسائل بناءً على مصطلح البحث
+   */
+  const filteredMessages = messages.filter((msg) =>
+    msg.text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          text: `1. Surgery
-Purpose: To remove the tumor and some surrounding healthy tissue.
-Types:
-Curative Surgery: Removes the entire tumor when localized.
-Debulking Surgery: Removes part of the tumor when complete removal is not possible.
-Palliative Surgery: Relieves symptoms and improves quality of life.
-Reconstructive Surgery: Restores appearance or function after primary surgery.
-2. Radiation Therapy
-Purpose: Uses high doses of radiation to kill cancer cells or shrink tumors.
-Types:
-External Beam Radiation: Delivered from outside the body.
-Internal Radiation (Brachytherapy): Places radioactive material inside the body near cancer cells.
-Systemic Radiation: Uses radioactive substances that travel in the blood to target cancer cells.
-3. Chemotherapy
-Purpose: Uses drugs to kill rapidly dividing cancer cells.
-Methods:
-Intravenous (IV): Delivered through a vein.
-Oral: Taken by mouth.
-Intramuscular or Subcutaneous: Injected into a muscle or under the skin.
-Intrathecal: Delivered into the cerebrospinal fluid.
-4. Immunotherapy
-Purpose: Boosts the body’s immune system to fight cancer.
-Types:
-Checkpoint Inhibitors: Help the immune system recognize and attack cancer cells.
-CAR T-cell Therapy: Modifies T-cells to attack cancer cells.
-Cancer Vaccines: Stimulate the immune system to attack cancer cells.
-5. Targeted Therapy
-Purpose: Uses drugs to target specific molecules involved in cancer growth and spread.
-Types:
-Monoclonal Antibodies: Bind to specific targets on cancer cells.
-Small Molecule Inhibitors: Interfere with specific pathways or proteins involved in cancer growth.
-          `,
-          type: "incoming",
-        },
-      ]);
-      setIsLoading(false); // إخفاء الـ spinner
-    }, 2000); // تأخير لمدة ثانيتين
-  };
-  const handleSymptoms = () => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: "Symptoms information...", type: "outgoing" },
-    ]);
+  // التمرير التلقائي داخل صندوق الرسائل فقط
+  useEffect(() => {
+    const list = chatboxRef.current;
+    if (list) {
+      list.scrollTo({ top: list.scrollHeight, behavior: "smooth" });
+    }
+  }, [messages, isLoading, isTyping]);
 
-    setIsLoading(true); // عرض الـ spinner
-
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          text: `1- Lump in the Breast or Armpit:
-
-A new lump or mass in the breast or underarm area is one of the most common signs of breast cancer. These lumps are often hard and painless, but some can be tender or painful.
-2- Changes in Breast Size or Shape:
-
-Any unexplained change in the size, shape, or appearance of the breast may indicate breast cancer.
-3- Skin Changes on the Breast:
-
-Redness, dimpling, puckering, or thickening of the breast skin that resembles the texture of an orange peel.
-4- Nipple Changes:
-
-Inversion (turning inward) of the nipple, changes in the nipple shape, or discharge (other than breast milk) that is clear, bloody, or another unusual color.
-5- Breast Pain:
-
-While breast pain is more commonly associated with benign conditions, persistent pain or discomfort in one part of the breast can be a symptom of breast cancer.
-6- Swelling:
-
-Swelling of all or part of the breast, even if no lump is felt.
-7- Lymph Node Changes:
-
-Swelling or lumps in the lymph nodes under the arm or around the collarbone, which may indicate the spread of breast cancer.
-
-        `,
-          type: "incoming",
-        },
-      ]);
-      setIsLoading(false); // إخفاء الـ spinner
-    }, 2000); // تأخير لمدة ثانيتين
+  /**
+   * حفظ المحادثة الحالية في localStorage
+   */
+  const saveChat = () => {
+    if (messages.length > 0) {
+      const chatData = {
+        id: Date.now(),
+        title: `محادثة ${new Date().toLocaleDateString("ar-EG")}`,
+        messages: [...messages],
+        timestamp: new Date().toISOString(),
+      };
+      setSavedChats([...savedChats, chatData]);
+      localStorage.setItem(
+        "savedChats",
+        JSON.stringify([...savedChats, chatData])
+      );
+      toast.success("تم حفظ المحادثة بنجاح!");
+    }
   };
 
-  const handlehospitals = () => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: "famous breast cancer hospitals in Egypt...", type: "outgoing" },
-    ]);
-
-    setIsLoading(true); // عرض الـ spinner
-
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          text: `1- National Cancer Institute, Cairo University:
-
-Located in Cairo, this institute is renowned for its comprehensive cancer care and research. It offers specialized treatment for breast cancer, including surgery, chemotherapy, radiation therapy, and supportive care.
-2- Magrabi Hospitals & Centers:
-
-Magrabi hospitals have a strong reputation for providing high-quality healthcare services across Egypt. They offer multidisciplinary breast cancer treatment programs that include surgery, chemotherapy, and radiation therapy.
-3- Cairo Oncology Center:
-
-Located in Cairo, this center specializes in oncology and provides advanced treatment options for breast cancer, including surgery, radiation therapy, and targeted therapies.
-4- 57357 Hospital (Children's Cancer Hospital Egypt):
-
-Although primarily focused on pediatric oncology, 57357 Hospital also offers specialized services for adult cancer patients, including breast cancer. It is known for its state-of-the-art facilities and comprehensive approach to cancer treatment.
-5- Dar El Fouad Hospital:
-
-Dar El Fouad Hospital in Cairo is equipped with modern technology and offers a range of oncology services, including breast cancer treatment. It has a dedicated team of oncologists and support staff.
-          `,
-          type: "incoming",
-        },
-      ]);
-      setIsLoading(false); // إخفاء الـ spinner
-    }, 2000); // تأخير لمدة ثانيتين
-  };
-  const handleCause = () => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: "Factors that cause breast cancer?...", type: "outgoing" },
-    ]);
-
-    setIsLoading(true); // عرض الـ spinner
-
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          text: `1. Genetic Factors:
-BRCA1 and BRCA2 Mutations: Inherited mutations in these genes increase the risk of breast and ovarian cancers.
-Family History: Having a first-degree relative (parent, sibling, child) with breast cancer increases the risk.
-2. Hormonal Factors:
-Estrogen Exposure: Prolonged exposure to estrogen over a lifetime, such as early menstruation (before age 12), late menopause (after age 55), or hormone replacement therapy.
-Reproductive Factors: Starting periods early or having a late first pregnancy or never having been pregnant.
-3. Lifestyle Factors:
-Alcohol Consumption: Regular and excessive alcohol consumption increases the risk.
-Obesity: Being overweight or obese, especially after menopause.
-Physical Inactivity: Lack of regular physical activity.
-Diet: High-fat diets or diets lacking in fruits and vegetables may contribute.
-4. Environmental Factors:
-Exposure to Radiation: High doses of radiation, such as from previous radiation therapy to the chest.
-Environmental Pollutants: Some chemicals in the environment may mimic estrogen or otherwise affect hormone function.
-5. Other Risk Factors:
-Age: Risk increases with age, with most breast cancers occurring in women over 50.
-Personal History: Previous breast cancer or certain non-cancerous breast diseases.
-Race and Ethnicity: White women have a slightly higher risk, but African American women are more likely to die from breast cancer at any age.
-6. Unknown Factors:
-Other Genetic Mutations: Besides BRCA1 and BRCA2, other genetic mutations and variations may contribute.
-Immune System: Changes in the immune system may play a role.
-Endocrine Disruptors: Chemicals that interfere with hormone function.
-7. Risk Reduction Strategies:
-While some risk factors cannot be changed, such as age and family history, adopting a healthy lifestyle can help reduce the risk of breast cancer:
-
-Maintain a healthy weight.
-Be physically active.
-Limit alcohol consumption.
-Avoid hormone replacement therapy, if possible.
-Consider genetic counseling and testing if there is a strong family history.
-Understanding these factors can help individuals make informed decisions about their health and potentially reduce their risk of developing breast cancer. Regular screening and early detection remain crucial for improving outcomes in breast cancer treatment.
-          `,
-          type: "incoming",
-        },
-      ]);
-      setIsLoading(false); // إخفاء الـ spinner
-    }, 2000); // تأخير لمدة ثانيتين
+  /**
+   * تحميل المحادثات المحفوظة من localStorage
+   */
+  const loadSavedChats = () => {
+    const saved = localStorage.getItem("savedChats");
+    if (saved) {
+      setSavedChats(JSON.parse(saved));
+    }
   };
 
-  const handleFAQs = () => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: "FAQs information...", type: "outgoing" },
-    ]);
-
-    setIsLoading(true); // عرض الـ spinner
-
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          text: `1. What is breast cancer?
-Breast cancer is a type of cancer that develops in the cells of the breast. It typically begins in the ducts or lobules and can spread to other parts of the body.
-
-2. What are the risk factors for breast cancer?
-Gender: Being female.
-Age: Risk increases with age.
-Family History: Having close relatives with breast cancer.
-Genetic Mutations: BRCA1 and BRCA2 mutations.
-Hormonal Factors: Early menstruation, late menopause, hormone replacement therapy.
-Lifestyle Factors: Alcohol consumption, obesity, lack of physical activity.
-3. What are the common symptoms of breast cancer?
-A lump in the breast or underarm.
-Changes in breast size, shape, or appearance.
-Skin changes such as redness or dimpling.
-Nipple changes or discharge.
-Breast pain or discomfort.
-4. How is breast cancer diagnosed?
-Physical Examination: By a healthcare provider.
-Imaging Tests: Mammograms, ultrasounds, MRIs.
-Biopsy: Removing a sample of breast tissue for testing.
-5. What are the stages of breast cancer?
-Stage 0: Non-invasive, confined to the ducts.
-Stage I: Small tumor, localized.
-Stage II: Larger tumor or spread to a few nearby lymph nodes.
-Stage III: More extensive lymph node involvement, larger tumor.
-Stage IV: Metastatic, cancer has spread to other parts of the body.
-        `,
-          type: "incoming",
-        },
-      ]);
-      setIsLoading(false); // إخفاء الـ spinner
-    }, 2000); // تأخير لمدة ثانيتين
-  };
-  const DiseaseTest = () => {
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: "FAQs information...", type: "outgoing" },
-    ]);
-
-    setIsLoading(true); // عرض الـ spinner
-
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          text: `1. What is breast cancer?
-Breast cancer is a type of cancer that develops in the cells of the breast. It typically begins in the ducts or lobules and can spread to other parts of the body.
-
-2. What are the risk factors for breast cancer?
-Gender: Being female.
-Age: Risk increases with age.
-Family History: Having close relatives with breast cancer.
-Genetic Mutations: BRCA1 and BRCA2 mutations.
-Hormonal Factors: Early menstruation, late menopause, hormone replacement therapy.
-Lifestyle Factors: Alcohol consumption, obesity, lack of physical activity.
-3. What are the common symptoms of breast cancer?
-A lump in the breast or underarm.
-Changes in breast size, shape, or appearance.
-Skin changes such as redness or dimpling.
-Nipple changes or discharge.
-Breast pain or discomfort.
-4. How is breast cancer diagnosed?
-Physical Examination: By a healthcare provider.
-Imaging Tests: Mammograms, ultrasounds, MRIs.
-Biopsy: Removing a sample of breast tissue for testing.
-5. What are the stages of breast cancer?
-Stage 0: Non-invasive, confined to the ducts.
-Stage I: Small tumor, localized.
-Stage II: Larger tumor or spread to a few nearby lymph nodes.
-Stage III: More extensive lymph node involvement, larger tumor.
-Stage IV: Metastatic, cancer has spread to other parts of the body.
-        `,
-          type: "incoming",
-        },
-      ]);
-      setIsLoading(false); // إخفاء الـ spinner
-    }, 2000); // تأخير لمدة ثانيتين
+  /**
+   * تحميل محادثة محفوظة محددة
+   * @param {number} chatId - معرف المحادثة
+   */
+  const loadChat = (chatId) => {
+    const chat = savedChats.find((c) => c.id === chatId);
+    if (chat) {
+      setMessages(chat.messages);
+      setShowSavedChats(false);
+      toast.success("تم تحميل المحادثة");
+    }
   };
 
+  /**
+   * حذف محادثة محفوظة
+   * @param {number} chatId - معرف المحادثة
+   */
+  const deleteChat = (chatId) => {
+    const updatedChats = savedChats.filter((c) => c.id !== chatId);
+    setSavedChats(updatedChats);
+    localStorage.setItem("savedChats", JSON.stringify(updatedChats));
+    toast.success("تم حذف المحادثة");
+  };
 
-    const handleClick = () => {
-      window.open("https://5a8cb65cb7680e8cd3.gradio.live/", "_blank");
+  // تحميل المحادثات المحفوظة عند بدء التطبيق
+  useEffect(() => {
+    loadSavedChats();
+  }, []);
+  /**
+   * دالة محسنة للتعامل مع أزرار الـ chatbot
+   * تقلل من التكرار في الكود وتوحد طريقة التعامل مع الأزرار
+   * @param {string} buttonType - نوع الزر (treatment, symptoms, hospitals, causes, faqs)
+   */
+  const handleButtonClick = (buttonType) => {
+    // إخفاء الأزرار عند الضغط على أي منها
+    setShowButtons(false);
+
+    const responses = {
+      treatment: {
+        text: "معلومات عن العلاج...",
+        response: `🔬 **طرق علاج سرطان الثدي:**
+
+**1. الجراحة:**
+• الجراحة الاستئصالية: لإزالة الورم بالكامل
+• الجراحة التجميلية: لاستعادة شكل الثدي
+• استئصال الغدد الليمفاوية
+
+**2. العلاج الإشعاعي:**
+• العلاج الإشعاعي الخارجي
+• العلاج الإشعاعي الداخلي (البراكي ثيرابي)
+
+**3. العلاج الكيميائي:**
+• عبر الوريد أو الفم
+• يقتل الخلايا السرطانية سريعة الانقسام
+
+**4. العلاج المناعي:**
+• يقوي جهاز المناعة لمحاربة السرطان
+• العلاج الموجه للخلايا السرطانية
+
+**5. العلاج الهرموني:**
+• لمنع تأثير الهرمونات على الخلايا السرطانية`,
+      },
+      symptoms: {
+        text: "معلومات عن الأعراض...",
+        response: `⚠️ **أعراض سرطان الثدي:**
+
+**الأعراض الشائعة:**
+• كتلة أو تورم في الثدي أو تحت الإبط
+• تغير في حجم أو شكل الثدي
+• تغيرات في جلد الثدي (احمرار، تجعد)
+• تغيرات في الحلمة (انقلاب، إفرازات)
+• ألم مستمر في الثدي
+• تورم في الغدد الليمفاوية
+
+**متى يجب استشارة الطبيب:**
+• عند ملاحظة أي من هذه الأعراض
+• إجراء فحص دوري للثدي
+• المتابعة مع طبيب الأورام`,
+      },
+      hospitals: {
+        text: "مستشفيات متخصصة...",
+        response: `🏥 **أفضل مستشفيات سرطان الثدي في مصر:**
+
+**1. المعهد القومي للأورام - جامعة القاهرة**
+• متخصص في علاج الأورام
+• أحدث التقنيات العلاجية
+
+**2. مستشفى 57357**
+• رائد في علاج السرطان
+• خدمات متكاملة للمرضى
+
+**3. مستشفيات مجربى**
+• شبكة مستشفيات متطورة
+• أطباء متخصصون في الأورام
+
+**4. مركز القاهرة للأورام**
+• متخصص في علاج سرطان الثدي
+• برامج علاجية شاملة
+
+**5. مستشفى دار الفؤاد**
+• تقنيات حديثة
+• فريق طبي متخصص`,
+      },
+      causes: {
+        text: "عوامل الخطر...",
+        response: `🔍 **عوامل خطر سرطان الثدي:**
+
+**العوامل الوراثية:**
+• طفرات جينية (BRCA1, BRCA2)
+• تاريخ عائلي للمرض
+
+**العوامل الهرمونية:**
+• التعرض الطويل للإستروجين
+• بداية مبكرة للدورة الشهرية
+• انقطاع متأخر للطمث
+
+**عوامل نمط الحياة:**
+• شرب الكحول
+• السمنة
+• قلة النشاط البدني
+• النظام الغذائي غير الصحي
+
+**عوامل أخرى:**
+• التقدم في العمر
+• التعرض للإشعاع
+• التاريخ المرضي السابق`,
+      },
+      faqs: {
+        text: "الأسئلة الشائعة...",
+        response: `❓ **الأسئلة الشائعة:**
+
+**1. ما هو سرطان الثدي؟**
+مرض يحدث عندما تنمو خلايا الثدي بشكل غير طبيعي.
+
+**2. من هم الأكثر عرضة؟**
+النساء فوق 50 عام، خاصة من لديهن تاريخ عائلي.
+
+**3. كيف يتم التشخيص؟**
+• الفحص السريري
+• الماموجرام
+• الموجات فوق الصوتية
+• الخزعة
+
+**4. هل يمكن الوقاية؟**
+نعم، من خلال:
+• الفحص الدوري
+• نمط حياة صحي
+• تجنب عوامل الخطر`,
+      },
     };
+
+    const response = responses[buttonType];
+    if (response) {
+      // إضافة اختيار المستخدم بدون إعادة إدراج رسالة الترحيب
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: response.text, type: "outgoing" },
+      ]);
+
+      setIsLoading(true);
+
+      setTimeout(() => {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: response.response, type: "incoming" },
+        ]);
+        setIsLoading(false);
+      }, 1500);
+    }
+  };
+
+  // دوال محسنة للأزرار
+  const handleTreatment = () => handleButtonClick("treatment");
+  const handleSymptoms = () => handleButtonClick("symptoms");
+
+  const handlehospitals = () => handleButtonClick("hospitals");
+  const handleCause = () => handleButtonClick("causes");
+  const handleFAQs = () => handleButtonClick("faqs");
+
+  /**
+   * إعادة إظهار أزرار الخيارات
+   */
+  const showOptionsButtons = () => {
+    setShowButtons(true);
+  };
+
+  const handleClick = () => {
+    window.open("https://5a8cb65cb7680e8cd3.gradio.live/", "_blank");
+  };
   console.log(message);
   return (
     <>
@@ -473,110 +657,216 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
           <div className="chatbot">
             <header id="UP-chatbot d-flex align-items-center justify-content-around">
               <h2>Chatbot</h2>
-              <button
-                onClick={handleCloseChatbox}
-                className="close-btn material-symbols-outlined w-25 text-light bg-transparent"
-              >
-                close
-              </button>
+              <div className="header-controls d-flex gap-2">
+                <button
+                  onClick={() => setShowSearch(!showSearch)}
+                  className="control-btn"
+                  title="البحث في المحادثة"
+                >
+                  🔍
+                </button>
+                <button
+                  onClick={saveChat}
+                  className="control-btn"
+                  title="حفظ المحادثة"
+                >
+                  💾
+                </button>
+                <button
+                  onClick={() => setShowSavedChats(!showSavedChats)}
+                  className="control-btn"
+                  title="المحادثات المحفوظة"
+                >
+                  📁
+                </button>
+                <button
+                  onClick={handleCloseChatbox}
+                  className="close-btn"
+                  title="إغلاق"
+                >
+                  ✕
+                </button>
+              </div>
             </header>
-            <ul className="chatbox">
-              <li className="chat incoming">
-                <span className="material-symbols-outlined">
-                  <img src={robot} alt="robot" />
-                </span>
-                <p>
-                  {/* Hi there 👋 */}
-                  {/* <br /> */}I can help you today!
-                </p>
-              </li>
 
-              <li className="chat incoming">
-                <span className="material-symbols-outlined">
-                  <img src={robot} alt="robot" />
-                </span>
-                <div className="div-chat p-2">
-                  <button className="start-chatt" onClick={chatbotData}>
-                    Start
+            {/* شريط البحث */}
+            {showSearch && (
+              <div className="search-bar">
+                <input
+                  type="text"
+                  placeholder="ابحث في المحادثة..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="search-input"
+                />
+                <button
+                  onClick={() => setShowSearch(false)}
+                  className="search-close-btn"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
+
+            {/* قائمة المحادثات المحفوظة */}
+            {showSavedChats && (
+              <div className="saved-chats-panel">
+                <div className="saved-chats-header">
+                  <h4>المحادثات المحفوظة</h4>
+                  <button
+                    onClick={() => setShowSavedChats(false)}
+                    className="close-saved-btn"
+                  >
+                    ✕
                   </button>
                 </div>
-              </li>
-              {datachat && (
-                <div className="mt-3">
-                  <li className="chat incoming">
-                    <span className="material-symbols-outlined">
-                      <img src={robot} alt="robot" />
-                    </span>
-                    <div className="alldata">
-                      <ul className="p-0">
-                        <li className="chat incoming">
-                          <div className="div-chatt p-2">
-                            <button
-                              className="start-chat"
-                              onClick={handleTreatment}
-                            >
-                              Treatment
-                            </button>
-                          </div>
-                        </li>
-                        <li className="chat incoming">
-                          <div className="div-chatt p-2">
-                            <button
-                              className="start-chat"
-                              onClick={handleSymptoms}
-                            >
-                              Symptoms
-                            </button>
-                          </div>
-                        </li>
-                        <li className="chat incoming">
-                          <div className="div-chatt p-2">
-                            <button
-                              className="start-chattt"
-                              onClick={handlehospitals}
-                            >
-                              famous breast cancer hospitals
-                            </button>
-                          </div>
-                        </li>
-                        <li className="chat incoming">
-                          <div className="div-chatt p-2">
-                            <button
-                              className="start-chattt"
-                              onClick={handleCause}
-                            >
-                              Factors that cause breast cancer?
-                            </button>
-                          </div>
-                        </li>
-                        <li className="chat incoming">
-                          <div className="div-chatt p-2">
-                            <button
-                              className="start-chattt"
-                              onClick={handleClick}
-                            >
-                              Personal x-ray test?
-                            </button>
-                          </div>
-                        </li>
-                        <li className="chat incoming">
-                          <div className="div-chatt p-2">
-                            <button className="start-chat" onClick={handleFAQs}>
-                              FAQs
-                            </button>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
+                <div className="saved-chats-list">
+                  {savedChats.length === 0 ? (
+                    <p className="no-chats">لا توجد محادثات محفوظة</p>
+                  ) : (
+                    savedChats.map((chat) => (
+                      <div key={chat.id} className="saved-chat-item">
+                        <div className="chat-info">
+                          <h5>{chat.title}</h5>
+                          <p>
+                            {new Date(chat.timestamp).toLocaleString("ar-EG")}
+                          </p>
+                        </div>
+                        <div className="chat-actions">
+                          <button
+                            onClick={() => loadChat(chat.id)}
+                            className="load-btn"
+                          >
+                            تحميل
+                          </button>
+                          <button
+                            onClick={() => deleteChat(chat.id)}
+                            className="delete-btn"
+                          >
+                            حذف
+                          </button>
+                        </div>
+                      </div>
+                    ))
+                  )}
                 </div>
+              </div>
+            )}
+
+            <ul className="chatbox" ref={chatboxRef}>
+              {/* أزرار الخيارات - تظهر فقط في البداية */}
+              {showButtons && (
+                <li className="chat incoming">
+                  <span className="material-symbols-outlined">
+                    <img src={robot} alt="robot" />
+                  </span>
+                  <div className="alldata">
+                    <ul className="p-0">
+                      <li className="chat incoming">
+                        <div className="div-chatt p-2">
+                          <button
+                            className="start-chat"
+                            onClick={handleTreatment}
+                          >
+                            العلاج
+                          </button>
+                        </div>
+                      </li>
+                      <li className="chat incoming">
+                        <div className="div-chatt p-2">
+                          <button
+                            className="start-chat"
+                            onClick={handleSymptoms}
+                          >
+                            الأعراض
+                          </button>
+                        </div>
+                      </li>
+                      <li className="chat incoming">
+                        <div className="div-chatt p-2">
+                          <button
+                            className="start-chattt"
+                            onClick={handlehospitals}
+                          >
+                            المستشفيات المتخصصة
+                          </button>
+                        </div>
+                      </li>
+                      <li className="chat incoming">
+                        <div className="div-chatt p-2">
+                          <button
+                            className="start-chattt"
+                            onClick={handleCause}
+                          >
+                            عوامل الخطر
+                          </button>
+                        </div>
+                      </li>
+                      <li className="chat incoming">
+                        <div className="div-chatt p-2">
+                          <button
+                            className="start-chattt"
+                            onClick={handleClick}
+                          >
+                            فحص شخصي
+                          </button>
+                        </div>
+                      </li>
+                      <li className="chat incoming">
+                        <div className="div-chatt p-2">
+                          <button className="start-chat" onClick={handleFAQs}>
+                            الأسئلة الشائعة
+                          </button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
               )}
 
-              {messages.map((msg, index) => (
+              {(searchTerm ? filteredMessages : messages).map((msg, index) => (
                 <li key={index} className={`chat ${msg.type}`}>
-                  <p>{msg.text}</p>
+                  {msg.type === "incoming" && (
+                    <span className="material-symbols-outlined">
+                      <img
+                        src={robot}
+                        alt="robot"
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </span>
+                  )}
+                  <p>
+                    {msg.isTyping ? typingText : msg.text}
+                    {msg.isTyping && <span className="typing-cursor">|</span>}
+                  </p>
                 </li>
               ))}
+              {/* زر إعادة إظهار الخيارات - يوضع أسفل الرسائل دائماً */}
+              {!showButtons && messages.length > 2 && (
+                <li className="chat incoming">
+                  <span className="material-symbols-outlined">
+                    <img src={robot} alt="robot" />
+                  </span>
+                  <div className="div-chat p-2">
+                    <button
+                      className="start-chatt"
+                      onClick={showOptionsButtons}
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #28a745 0%, #20c997 100%)",
+                        fontSize: "0.9rem",
+                        padding: "10px 20px",
+                      }}
+                    >
+                      🔄 عرض الخيارات مرة أخرى
+                    </button>
+                  </div>
+                </li>
+              )}
               {/* {datachat && (
                 <div className="mt-3">
                   <li className="chat incoming">
@@ -2201,4 +2491,3 @@ Stage IV: Metastatic, cancer has spread to other parts of the body.
     </>
   );
 }
-
